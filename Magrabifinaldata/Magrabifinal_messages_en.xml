@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[Magrabi Dental Hospital Riyadh]]></data>
+
+
+  <data name="en_panogroup107_title"><![CDATA[Ground Floor]]></data>
+
+  <data name="en_pano104_title"><![CDATA[   - Facade]]></data>
+  <data name="en_spotpoint251_tooltip"><![CDATA[Parking & Emergency]]></data>
+  <data name="en_pano108_title"><![CDATA[   - Reception]]></data>
+  <data name="en_spotpoint247_tooltip"><![CDATA[Pharmacy]]></data>
+  <data name="en_spotpoint535_tooltip"><![CDATA[1st Floor]]></data>
+  <data name="en_spotpoint1619_tooltip"><![CDATA[Magrabi Private Clinic]]></data>
+  <data name="en_pano1617_title"><![CDATA[   - Magrabi Private Clinic]]></data>
+  <data name="en_spotpoint1623_tooltip"><![CDATA[Eye Clinic]]></data>
+  <data name="en_spotpoint1631_tooltip"><![CDATA[ENT Clinic]]></data>
+  <data name="en_pano123_title"><![CDATA[   - Waiting Room ]]></data>
+  <data name="en_pano245_title"><![CDATA[   - Pharmacy]]></data>
+  <data name="en_spotpoint248_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_pano161_title"><![CDATA[   - Glaucoma Unit]]></data>
+  <data name="en_spotpoint167_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint171_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint175_tooltip"><![CDATA[Dr. Ahmed El Bably Clinic]]></data>
+  <data name="en_pano181_title"><![CDATA[   - Cornea & Refractive Surgury Unit]]></data>
+  <data name="en_pano211_title"><![CDATA[   - Contact Lens Unit]]></data>
+  <data name="en_pano233_title"><![CDATA[   - Cateract Unit]]></data>
+  <data name="en_spotpoint239_tooltip"><![CDATA[Dr. Abdullah Al. Asiri Clinic]]></data>
+  <data name="en_spotpoint243_tooltip"><![CDATA[Assessment Room]]></data>
+  <data name="en_pano252_title"><![CDATA[   - Parking]]></data>
+  <data name="en_spotpoint255_tooltip"><![CDATA[Parking Entrance]]></data>
+  <data name="en_pano270_title"><![CDATA[   - Emergency]]></data>
+  <data name="en_spotpoint275_tooltip"><![CDATA[Parking Entrance]]></data>
+  <data name="en_spotpoint276_tooltip"><![CDATA[Emergency Reception]]></data>
+
+  <data name="en_panogroup546_title"><![CDATA[1st Floor]]></data>
+
+  <data name="en_pano533_title"><![CDATA[   - Dental Reception]]></data>
+  <data name="en_spotpoint536_tooltip"><![CDATA[Ground Floor]]></data>
+  <data name="en_spotpoint540_tooltip"><![CDATA[Dental Unit]]></data>
+  <data name="en_spotpoint1113_tooltip"><![CDATA[2nd Floor]]></data>
+  <data name="en_pano538_title"><![CDATA[   - Dental Unit]]></data>
+  <data name="en_spotpoint544_tooltip"><![CDATA[Dental Reception]]></data>
+  <data name="en_spotpoint545_tooltip"><![CDATA[Dr.Abdul Alhashim Clinic]]></data>
+  <data name="en_spotpoint550_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint554_tooltip"><![CDATA[Dr.Rama El Tawil Clinic]]></data>
+  <data name="en_pano598_title"><![CDATA[   - Vitreo Retinal Unit]]></data>
+  <data name="en_spotpoint603_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint607_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint613_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_pano619_title"><![CDATA[   - Medical Assesment Unit]]></data>
+  <data name="en_spotpoint625_tooltip"><![CDATA[Collections Area]]></data>
+  <data name="en_spotpoint653_tooltip"><![CDATA[X- Ray]]></data>
+  <data name="en_pano655_title"><![CDATA[   - Occuplasty Unit]]></data>
+  <data name="en_spotpoint661_tooltip"><![CDATA[Investigation Unit]]></data>
+  <data name="en_pano667_title"><![CDATA[   - Pediatric Unit]]></data>
+  <data name="en_spotpoint673_tooltip"><![CDATA[Childrens Waiting Area]]></data>
+  <data name="en_pano695_title"><![CDATA[   - ENT Unit]]></data>
+  <data name="en_spotpoint701_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint705_tooltip"><![CDATA[Assessment Room]]></data>
+  <data name="en_spotpoint711_tooltip"><![CDATA[Assessment Room]]></data>
+
+  <data name="en_panogroup1105_title"><![CDATA[2nd Floor]]></data>
+
+  <data name="en_pano1100_title"><![CDATA[   - Reception]]></data>
+  <data name="en_spotpoint1106_tooltip"><![CDATA[Excimer Laser Suite]]></data>
+  <data name="en_spotpoint1114_tooltip"><![CDATA[Ground Floor]]></data>
+  <data name="en_spotpoint1121_tooltip"><![CDATA[2nd Mezzanine]]></data>
+  <data name="en_pano1102_title"><![CDATA[   - Excimer Laser Suite]]></data>
+  <data name="en_spotpoint1109_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_spotpoint1110_tooltip"><![CDATA[Recovery Room]]></data>
+  <data name="en_pano1104_title"><![CDATA[   - Recovery Room]]></data>
+  <data name="en_spotpoint1111_tooltip"><![CDATA[Excimer Laser Suite]]></data>
+
+  <data name="en_panogroup1116_title"><![CDATA[2nd Mezzanine ]]></data>
+
+  <data name="en_pano1117_title"><![CDATA[   - Medical Library]]></data>
+  <data name="en_pano1119_title"><![CDATA[   - Auditorium]]></data>
+
+  <data name="en_panogroup1129_title"><![CDATA[3rd Floor]]></data>
+
+  <data name="en_pano1128_title"><![CDATA[   - Reception]]></data>
+  <data name="en_spotpoint1133_tooltip"><![CDATA[Ground Floor]]></data>
+  <data name="en_spotpoint1436_tooltip"><![CDATA[Pre Operative Room]]></data>
+  <data name="en_spotpoint1480_tooltip"><![CDATA[Female Waiting Area]]></data>
+  <data name="en_spotpoint1483_tooltip"><![CDATA[Male Waiting Area]]></data>
+  <data name="en_spotpoint1486_tooltip"><![CDATA[5th Flor]]></data>
+  <data name="en_pano1130_title"><![CDATA[   - Pre Operative Room]]></data>
+  <data name="en_spotpoint1439_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_pano1458_title"><![CDATA[   - Operation Room (Cateract)]]></data>
+  <data name="en_pano1462_title"><![CDATA[   - ENT Operation Room]]></data>
+  <data name="en_pano1468_title"><![CDATA[   - Operation Room Retina Device ]]></data>
+  <data name="en_pano1473_title"><![CDATA[   - Recovery Room]]></data>
+
+  <data name="en_panogroup1508_title"><![CDATA[5th Floor]]></data>
+
+  <data name="en_pano1507_title"><![CDATA[   - Double Room]]></data>
+  <data name="en_spotpoint1513_tooltip"><![CDATA[Toilet]]></data>
+  <data name="en_pano1515_title"><![CDATA[   - Single Room Small]]></data>
+  <data name="en_spotpoint1518_tooltip"><![CDATA[Toilet]]></data>
+  <data name="en_pano1522_title"><![CDATA[   - Single Room Large]]></data>
+  <data name="en_spotpoint1530_tooltip"><![CDATA[Toilet]]></data>
+
+  <data name="en_panogroup1558_title"><![CDATA[6th Floor]]></data>
+
+  <data name="en_pano1557_title"><![CDATA[   - Royal Suite]]></data>
+  <data name="en_spotpoint1563_tooltip"><![CDATA[Kitchen]]></data>
+  <data name="en_spotpoint1567_tooltip"><![CDATA[Small Lounge]]></data>
+  <data name="en_spotpoint1573_tooltip"><![CDATA[Main Lounge]]></data>
+  <data name="en_spotpoint1577_tooltip"><![CDATA[Guest Toilet]]></data>
+  <data name="en_spotpoint1581_tooltip"><![CDATA[Patient's Room]]></data>
+  <data name="en_pano1589_title"><![CDATA[   - Suite ]]></data>
+  <data name="en_spotpoint1594_tooltip"><![CDATA[Guest Toilet]]></data>
+  <data name="en_spotpoint1600_tooltip"><![CDATA[Suite Lounge]]></data>
+  <data name="en_spotpoint1611_tooltip"><![CDATA[Patient's Room]]></data>
+  <data name="en_spotpoint1612_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_spotpoint1615_tooltip"><![CDATA[Kitchen]]></data>
+
+
+  <data name="en_pano106_title"><![CDATA[]]></data>
+  <data name="en_spotpoint112_tooltip"><![CDATA[Reception]]></data>
+
+
+  <data name="en_pano115_title"><![CDATA[]]></data>
+  <data name="en_spotpoint121_tooltip"><![CDATA[Waiting Room]]></data>
+  <data name="en_spotpoint125_tooltip"><![CDATA[Waiting Room]]></data>
+  <data name="en_spotpoint139_tooltip"><![CDATA[Waiting Room]]></data>
+  <data name="en_spotpoint145_tooltip"><![CDATA[Administration Office]]></data>
+
+
+  <data name="en_pano119_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano127_title"><![CDATA[]]></data>
+  <data name="en_spotpoint130_tooltip"><![CDATA[Waiting Room]]></data>
+  <data name="en_spotpoint133_tooltip"><![CDATA[Waiting Room]]></data>
+  <data name="en_spotpoint140_tooltip"><![CDATA[Waiting Room]]></data>
+
+
+  <data name="en_pano131_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano137_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano143_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano147_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano153_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano157_title"><![CDATA[]]></data>
+  <data name="en_spotpoint163_tooltip"><![CDATA[Glaucoma Unit]]></data>
+
+
+  <data name="en_pano165_title"><![CDATA[]]></data>
+  <data name="en_spotpoint168_tooltip"><![CDATA[Glaucoma Unit]]></data>
+
+
+  <data name="en_pano169_title"><![CDATA[]]></data>
+  <data name="en_spotpoint172_tooltip"><![CDATA[Glaucoma Unit]]></data>
+
+
+  <data name="en_pano173_title"><![CDATA[]]></data>
+  <data name="en_spotpoint176_tooltip"><![CDATA[Glaucoma Unit]]></data>
+
+
+  <data name="en_pano177_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano185_title"><![CDATA[]]></data>
+  <data name="en_spotpoint188_tooltip"><![CDATA[Cornea & Refractive Surgury Unit]]></data>
+  <data name="en_spotpoint192_tooltip"><![CDATA[Investigation Room]]></data>
+  <data name="en_spotpoint196_tooltip"><![CDATA[Dr Bassam Elkady Clinic]]></data>
+
+
+  <data name="en_pano189_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano194_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano197_title"><![CDATA[]]></data>
+  <data name="en_spotpoint202_tooltip"><![CDATA[Glaucoma Unit]]></data>
+  <data name="en_spotpoint205_tooltip"><![CDATA[Investigation Room]]></data>
+
+
+  <data name="en_pano203_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano207_title"><![CDATA[]]></data>
+  <data name="en_spotpoint220_tooltip"><![CDATA[Contact Lens Unit]]></data>
+
+
+  <data name="en_pano214_title"><![CDATA[]]></data>
+  <data name="en_spotpoint217_tooltip"><![CDATA[Contact Lens Unit]]></data>
+
+
+  <data name="en_pano218_title"><![CDATA[]]></data>
+  <data name="en_spotpoint224_tooltip"><![CDATA[Glaucoma Unit]]></data>
+
+
+  <data name="en_pano225_title"><![CDATA[]]></data>
+  <data name="en_spotpoint235_tooltip"><![CDATA[Cateract Unit]]></data>
+
+
+  <data name="en_pano237_title"><![CDATA[]]></data>
+  <data name="en_spotpoint242_tooltip"><![CDATA[Cateract Unit]]></data>
+
+
+  <data name="en_pano240_title"><![CDATA[]]></data>
+  <data name="en_spotpoint244_tooltip"><![CDATA[Cateract Unit]]></data>
+
+
+  <data name="en_pano249_title"><![CDATA[]]></data>
+  <data name="en_spotpoint254_tooltip"><![CDATA[Parking]]></data>
+  <data name="en_spotpoint272_tooltip"><![CDATA[Emergency Entrance]]></data>
+
+
+  <data name="en_pano259_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano263_title"><![CDATA[]]></data>
+  <data name="en_spotpoint269_tooltip"><![CDATA[Parking Exit]]></data>
+
+
+  <data name="en_pano273_title"><![CDATA[]]></data>
+  <data name="en_spotpoint277_tooltip"><![CDATA[Emergency Entrance]]></data>
+  <data name="en_spotpoint280_tooltip"><![CDATA[Emergency Assessment Room]]></data>
+
+
+  <data name="en_pano278_title"><![CDATA[]]></data>
+  <data name="en_spotpoint281_tooltip"><![CDATA[Emergency Reception]]></data>
+
+
+  <data name="en_pano542_title"><![CDATA[]]></data>
+  <data name="en_spotpoint547_tooltip"><![CDATA[Dental Unit]]></data>
+
+
+  <data name="en_pano548_title"><![CDATA[]]></data>
+  <data name="en_spotpoint551_tooltip"><![CDATA[Dental Unit]]></data>
+
+
+  <data name="en_pano552_title"><![CDATA[]]></data>
+  <data name="en_spotpoint555_tooltip"><![CDATA[Dental Unit]]></data>
+
+
+  <data name="en_pano556_title"><![CDATA[]]></data>
+  <data name="en_spotpoint559_tooltip"><![CDATA[Dental Unit]]></data>
+  <data name="en_spotpoint564_tooltip"><![CDATA[Dr. Ahmed Younes Clinic]]></data>
+
+
+  <data name="en_pano562_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano566_title"><![CDATA[]]></data>
+  <data name="en_spotpoint572_tooltip"><![CDATA[X-Ray Dental]]></data>
+  <data name="en_spotpoint576_tooltip"><![CDATA[Dental Clinic]]></data>
+  <data name="en_spotpoint580_tooltip"><![CDATA[Dental Unit Exit]]></data>
+
+
+  <data name="en_pano570_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano574_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano578_title"><![CDATA[]]></data>
+  <data name="en_spotpoint583_tooltip"><![CDATA[Dental Reception]]></data>
+  <data name="en_spotpoint586_tooltip"><![CDATA[Insurance Company]]></data>
+
+
+  <data name="en_pano584_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano588_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano592_title"><![CDATA[]]></data>
+  <data name="en_spotpoint715_tooltip"><![CDATA[Vitreo Retinal Unit]]></data>
+
+
+  <data name="en_pano600_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano605_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano611_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano615_title"><![CDATA[]]></data>
+  <data name="en_spotpoint621_tooltip"><![CDATA[Medical Assessment Unit]]></data>
+  <data name="en_spotpoint657_tooltip"><![CDATA[Occuplasty Unit]]></data>
+
+
+  <data name="en_pano623_title"><![CDATA[]]></data>
+  <data name="en_spotpoint629_tooltip"><![CDATA[Lab]]></data>
+
+
+  <data name="en_pano627_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano632_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano636_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano640_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano643_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano663_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano647_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano659_title"><![CDATA[]]></data>
+  <data name="en_spotpoint662_tooltip"><![CDATA[Occuplasty Unit]]></data>
+
+
+  <data name="en_pano651_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano671_title"><![CDATA[]]></data>
+  <data name="en_spotpoint674_tooltip"><![CDATA[Pediatric Unit]]></data>
+
+
+  <data name="en_pano675_title"><![CDATA[]]></data>
+  <data name="en_spotpoint678_tooltip"><![CDATA[Childrens waiting Area]]></data>
+  <data name="en_spotpoint682_tooltip"><![CDATA[Assessment Room]]></data>
+  <data name="en_spotpoint686_tooltip"><![CDATA[Assessment Room]]></data>
+
+
+  <data name="en_pano680_title"><![CDATA[]]></data>
+  <data name="en_spotpoint683_tooltip"><![CDATA[Pediatric Unit]]></data>
+
+
+  <data name="en_pano684_title"><![CDATA[]]></data>
+  <data name="en_spotpoint687_tooltip"><![CDATA[Pediatric Unit]]></data>
+
+
+  <data name="en_pano688_title"><![CDATA[]]></data>
+  <data name="en_spotpoint692_tooltip"><![CDATA[Dental Reception]]></data>
+  <data name="en_spotpoint697_tooltip"><![CDATA[ENT Unit]]></data>
+
+
+  <data name="en_pano699_title"><![CDATA[]]></data>
+  <data name="en_spotpoint702_tooltip"><![CDATA[ENT Unit]]></data>
+
+
+  <data name="en_pano703_title"><![CDATA[]]></data>
+  <data name="en_spotpoint708_tooltip"><![CDATA[ENT Unit]]></data>
+
+
+  <data name="en_pano709_title"><![CDATA[]]></data>
+  <data name="en_spotpoint712_tooltip"><![CDATA[ENT Unit]]></data>
+
+
+  <data name="en_pano1115_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1123_tooltip"><![CDATA[Medical Library]]></data>
+  <data name="en_spotpoint1124_tooltip"><![CDATA[Auditorium]]></data>
+  <data name="en_spotpoint1127_tooltip"><![CDATA[Ground Floor]]></data>
+
+
+  <data name="en_pano1437_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1442_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1460_tooltip"><![CDATA[Operation Room (Cateract)]]></data>
+  <data name="en_spotpoint1464_tooltip"><![CDATA[ENT Operation Room]]></data>
+  <data name="en_spotpoint1475_tooltip"><![CDATA[Recovery Room]]></data>
+
+
+  <data name="en_pano1465_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1471_tooltip"><![CDATA[Operation Room Retina Device]]></data>
+
+
+  <data name="en_pano1476_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1478_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1484_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1487_tooltip"><![CDATA[Ground Floor]]></data>
+  <data name="en_spotpoint1490_tooltip"><![CDATA[Female Waiting Area]]></data>
+  <data name="en_spotpoint1538_tooltip"><![CDATA[6th Floor]]></data>
+
+
+  <data name="en_pano1488_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1491_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1496_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1499_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1505_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_spotpoint1509_tooltip"><![CDATA[Double Room]]></data>
+
+
+  <data name="en_pano1503_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1517_tooltip"><![CDATA[Single Room Small]]></data>
+  <data name="en_spotpoint1532_tooltip"><![CDATA[Single Large Room]]></data>
+
+
+  <data name="en_pano1511_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1519_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1528_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1533_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1537_tooltip"><![CDATA[Ground Floor]]></data>
+  <data name="en_spotpoint1539_tooltip"><![CDATA[Female Waiting Area]]></data>
+  <data name="en_spotpoint1547_tooltip"><![CDATA[Male Waiting Area]]></data>
+
+
+  <data name="en_pano1535_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1541_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1545_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1548_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1555_tooltip"><![CDATA[Reception]]></data>
+  <data name="en_spotpoint1559_tooltip"><![CDATA[Royal Suite]]></data>
+
+
+  <data name="en_pano1553_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1591_tooltip"><![CDATA[Suite]]></data>
+
+
+  <data name="en_pano1561_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1565_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1570_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1575_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1579_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1585_tooltip"><![CDATA[Patient Toilet]]></data>
+
+
+  <data name="en_pano1583_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1592_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1597_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1599_tooltip"><![CDATA[Suite Lobby]]></data>
+  <data name="en_spotpoint1604_tooltip"><![CDATA[Patient's Room]]></data>
+
+
+  <data name="en_pano1601_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1603_tooltip"><![CDATA[Lounge Suite]]></data>
+  <data name="en_spotpoint1605_tooltip"><![CDATA[Suite Lobby]]></data>
+  <data name="en_spotpoint1608_tooltip"><![CDATA[Patient Toilet]]></data>
+
+
+  <data name="en_pano1606_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1613_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1616_tooltip"><![CDATA[Suite Lobby]]></data>
+
+
+  <data name="en_pano1621_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1627_tooltip"><![CDATA[Consultation Room]]></data>
+
+
+  <data name="en_pano1625_title"><![CDATA[]]></data>
+
+
+  <data name="en_pano1629_title"><![CDATA[]]></data>
+  <data name="en_spotpoint1635_tooltip"><![CDATA[Consultation Room]]></data>
+
+
+  <data name="en_pano1633_title"><![CDATA[]]></data>
+
+
+
+
+
+
+  <data name="en_logowebsiteurl"><![CDATA[]]></data>
+  <data name="en_controlBar_dockedThumbnailsprevSceneTip"><![CDATA[Previous panorama]]></data>
+  <data name="en_controlBar_dockedThumbnailsnextSceneTip"><![CDATA[Next panorama]]></data>
+  <data name="en_controlBar_dockedThumbnailszoomInTip"><![CDATA[Zoom in]]></data>
+  <data name="en_controlBar_dockedThumbnailszoomOutTip"><![CDATA[Zoom out]]></data>
+  <data name="en_controlBar_dockedThumbnailsmoveLeftTip"><![CDATA[Move left]]></data>
+  <data name="en_controlBar_dockedThumbnailsmoveRightTip"><![CDATA[Move right]]></data>
+  <data name="en_controlBar_dockedThumbnailsmoveUpTip"><![CDATA[Move up]]></data>
+  <data name="en_controlBar_dockedThumbnailsmoveDownTip"><![CDATA[Move down]]></data>
+  <data name="en_controlBar_dockedThumbnailsopenFsTip"><![CDATA[Enter fullscreen]]></data>
+  <data name="en_controlBar_dockedThumbnailscloseFsTip"><![CDATA[Exit fullscreen]]></data>
+  <data name="en_controlBar_dockedThumbnailsautorotateOnTip"><![CDATA[Start autorotation]]></data>
+  <data name="en_controlBar_dockedThumbnailsautorotateOffTip"><![CDATA[Stop autorotation]]></data>
+  <data name="en_controlBar_dockedThumbnailssoundsOnTip"><![CDATA[Start sounds]]></data>
+  <data name="en_controlBar_dockedThumbnailssoundsOffTip"><![CDATA[Stop sounds]]></data>
+  <data name="en_controlBar_dockedThumbnailsenterVRTip"><![CDATA[VR mode]]></data>
+  <data name="en_controlBar_dockedThumbnailsenterVRNotTip"><![CDATA[VR mode is unavailable]]></data>
+  <data name="en_controlBar_dockedThumbnailsdisplayControlsTip"><![CDATA[Show controls]]></data>
+  <data name="en_controlBar_dockedThumbnailshideControlsTip"><![CDATA[Hide controls]]></data>
+  <data name="en_buttontooltip"><![CDATA[]]></data>
+  <data name="en_buttonopenurlwebsiteurl"><![CDATA[http://www.accessgrantedweb.com]]></data>
+
+
+  <data name="en_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="en_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="en_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="en_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="en_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="en_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="en_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="en_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="en_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="en_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="en_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="en_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="en_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="en_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="en_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="en_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="en_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="en_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="en_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="en_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="en_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="en_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="en_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="en_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="en_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="en_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

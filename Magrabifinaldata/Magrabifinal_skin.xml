@@ -1,0 +1,2329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+
+
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_image_sequence_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         rotate="270"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onover="onoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+         height="30"
+         width="30"
+         />
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconDefaultPointSpotStyle">
+tween(scale, 1.2);
+tween(alpha, 1);
+
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Logo -->
+<!-- id : logo -->
+<!-- ********** -->
+
+  <layer align="top"
+         x="10"
+         y="10"
+         zorder="1"
+         name="logo"
+         keep="true"
+         visible="false"
+         capture="false"
+
+         url="%FIRSTXML%/graphics/logo/magrabi_logo.png" 
+         handcursor="false"
+
+         height="12%"
+         width="18%"
+
+         />
+
+  <events name="logoevents" 
+    onTourStart="showlogo();"
+    keep="true" />
+
+  <action name="hidelogo">
+    set(layer[logo].visible, false);
+  </action>
+  <action name="showlogo">
+      set(layer[logo].visible, true);
+  </action>
+
+
+
+
+<!-- ********** -->
+<!-- Docked Thumbnails &amp; Control Bar -->
+<!-- id : controlBar_dockedThumbnails -->
+<!-- ********** -->
+
+<krpano controlBar_dockedThumbnailsbarbuilt="false" controlBar_dockedThumbnailsIsOpened="false" />
+
+<events name="controlBar_dockedThumbnailsbarevents" 
+	onxmlcomplete="controlBar_dockedThumbnailsbuildMenuBar();"
+
+
+	
+	keep="true"/>
+
+
+
+<action name="controlBar_dockedThumbnailsbuildMenuBar">
+	ifnot (controlBar_dockedThumbnailsbarbuilt, controlBar_dockedThumbnailsbuildMenu(); set(controlBar_dockedThumbnailsbarbuilt, true););
+</action>
+
+
+
+<action name="controlBar_dockedThumbnailsbuildMenu">
+	
+    set(controlBar_dockedThumbnailsbutton_pos, 0);
+    set(layer[controlBar_dockedThumbnailsbtn_hidecontrols].x, get(controlBar_dockedThumbnailsbutton_pos));
+    set(layer[controlBar_dockedThumbnailsbtn_hidecontrols_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+    inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+
+      if (device.fullscreensupport,
+        set(layer[controlBar_dockedThumbnailsbtn_openfs].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_closefs].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_openfs_bg ].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_closefs_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+
+
+      set(layer[controlBar_dockedThumbnailsbtn_autorotate_on].x , get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_autorotate_on_bg].x , get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_autorotate_off].x, get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_autorotate_off_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+      inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+
+      set(layer[controlBar_dockedThumbnailsbtn_sound_on].x , get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_sound_on_bg].x , get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_sound_off].x, get(controlBar_dockedThumbnailsbutton_pos));
+      set(layer[controlBar_dockedThumbnailsbtn_sound_off_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+      inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+
+
+      if(plugin[ptpvrmode] AND device.html5 AND device.mobile,
+        set(layer[controlBar_dockedThumbnailsbtn_enter_vr].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_enter_vr_not].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg_not].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+
+
+      if (device.desktop,
+        set(layer[controlBar_dockedThumbnailsbtn_right].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_right_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+        set(layer[controlBar_dockedThumbnailsbtn_left].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_left_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+      if (device.desktop,
+        set(layer[controlBar_dockedThumbnailsbtn_down].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_down_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+        set(layer[controlBar_dockedThumbnailsbtn_up].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_up_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+      if (device.desktop,
+        set(layer[controlBar_dockedThumbnailsbtn_out].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_out_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+        set(layer[controlBar_dockedThumbnailsbtn_in].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_in_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+
+      if (scene.count GT 1,
+        set(layer[controlBar_dockedThumbnailsbtn_next_pano].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_next_pano_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+
+        set(layer[controlBar_dockedThumbnailsbtn_prev_pano].x, get(controlBar_dockedThumbnailsbutton_pos));
+        set(layer[controlBar_dockedThumbnailsbtn_prev_pano_bg].x, get(controlBar_dockedThumbnailsbutton_pos));
+        inc(controlBar_dockedThumbnailsbutton_pos, 36);
+      );
+
+
+
+	
+	
+	
+</action>
+
+<events name="controlBar_dockedThumbnailsStartTourEvents" onTourStart="controlBar_dockedThumbnailsCallOnStartTour();" keep="true" />
+
+<action name="controlBar_dockedThumbnailsCallOnStartTour">
+	
+	controlBar_dockedThumbnailsshowMenuControls();
+</action>
+
+
+
+
+    <layer name="controlBar_dockedThumbnails_bg"
+           keep="true"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/footer.png"
+           zorder="2"
+           width="100%"
+           align="bottomleft"
+           x="0"
+           visible="false" />
+
+    <style name="controlBar_dockedThumbnails_btn_style_bg"
+            keep="true"
+            parent="controlBar_dockedThumbnails_bg"
+            crop="0|0|48|48"
+            url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_bg.png"
+            align="bottomright"
+            height="36"
+            width="36"
+            alpha="0.3"
+            y="12"
+            zorder="0"
+            />
+    <style name="controlBar_dockedThumbnails_btn_style_bg_off"
+            keep="true"
+            parent="controlBar_dockedThumbnails_bg"
+            crop="0|0|48|48"
+            url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_bg.png"
+            align="bottomright"
+            height="36"
+            width="36"
+            alpha="0.3"
+            y="12"
+            zorder="0"
+            />
+
+    <style name="controlBar_dockedThumbnails_btn_style_on_bg"
+           keep="true"
+           parent="controlBar_dockedThumbnails_bg"
+           crop="0|48|48|48"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_bg.png"
+           align="bottomright"
+           height="36"
+           width="36"
+           alpha="0.3"
+           y="12"
+           zorder="0"
+           />
+    <style name="controlBar_dockedThumbnails_btn_style_on_bg_off"
+           keep="true"
+           parent="controlBar_dockedThumbnails_bg"
+           crop="0|0|48|48"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_bg.png"
+           align="bottomright"
+           height="36"
+           width="36"
+           alpha="0.3"
+           y="12"
+           zorder="0"
+           />
+
+    <style name="controlBar_dockedThumbnails_btn_down_style"
+           keep="true"
+           parent="controlBar_dockedThumbnails_bg"
+                 crop="0| 0|48|48"
+           onovercrop="0|48|48|48"
+           ondowncrop="0|96|48|48"
+           align="bottomright"
+           height="36"
+           width="36"
+           x="0" y="12"
+           zorder="1"
+           onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);"
+           onover="controlBar_dockedThumbnailsctrl_btn_onoveraction"
+           onout="controlBar_dockedThumbnailsctrl_btn_onoutaction"
+           />
+
+    <style name="controlBar_dockedThumbnails_btn_style"
+           keep="true"
+           parent="controlBar_dockedThumbnails_bg"
+                 crop="0| 0|48|48"
+           onovercrop="0|48|48|48"
+           ondowncrop="0|96|48|48"
+           align="bottomright"
+           height="36"
+           width="36"
+           x="0" y="12"
+           zorder="1"
+           onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);"
+           onover="controlBar_dockedThumbnailsctrl_btn_onoveraction"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction"
+           onout="controlBar_dockedThumbnailsctrl_btn_onoutaction"
+           />
+    <style name="controlBar_dockedThumbnails_btn_style_off"
+           keep="true"
+           parent="controlBar_dockedThumbnails_bg"
+           align="bottomright"
+           height="36"
+           width="36"
+           x="0" y="12"
+           zorder="1"
+           onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);"
+           onout="hideTooltip();"
+           />
+
+  <action name="controlBar_dockedThumbnailsctrl_btn_onoveraction">
+    txtadd(btn_bg_name, get(name), "_bg");
+    set(layer[get(btn_bg_name)].crop, "0|48|48|48");
+  </action>
+
+  <action name="controlBar_dockedThumbnailsctrl_btn_ondownaction">
+    txtadd(btn_bg_name, get(name), "_bg");
+    set(layer[get(btn_bg_name)].crop, "0|96|48|48");
+  </action>
+
+  <action name="controlBar_dockedThumbnailsctrl_btn_onoutaction">
+    txtadd(btn_bg_name, get(name), "_bg");
+    set(layer[get(btn_bg_name)].crop, "0|0|48|48");
+    hideTooltip();
+  </action>
+
+    <style name="controlBar_dockedThumbnails_btn_style_on"
+            keep="true"
+            parent="controlBar_dockedThumbnails_bg"
+                  crop="0|48|48|48"
+            onovercrop="0|48|48|48"
+            ondowncrop="0|96|48|48"
+            align="bottomright"
+            height="36"
+            width="36"
+            y="12"
+            zorder="1"
+            onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);" 
+            onout="hideTooltip();"
+            />
+    <style name="controlBar_dockedThumbnails_btn_style_on_off"
+            keep="true"
+            parent="controlBar_dockedThumbnails_bg"
+            align="bottomright"
+            height="36"
+            width="36"
+            y="12"
+            zorder="1"
+            onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);" 
+            onout="hideTooltip();"
+            />
+
+
+
+    <layer name="controlBar_dockedThumbnailsbtn_in_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" devices="desktop"/>
+    <layer name="controlBar_dockedThumbnailsbtn_in"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_zoom_in.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlZoomIn(false);"
+           onup="viewControlZoomStop();
+"
+           tooltip="controlBar_dockedThumbnailszoomInTip"
+           devices="desktop"
+           visible="false"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_out_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" devices="desktop"/>
+    <layer name="controlBar_dockedThumbnailsbtn_out"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_zoom_out.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlZoomOut(false);
+"
+           onup="viewControlZoomStop();
+"
+           tooltip="controlBar_dockedThumbnailszoomOutTip"
+           devices="desktop"
+           visible="false"
+           />
+
+    <layer name="controlBar_dockedThumbnailsbtn_left_bg" style="controlBar_dockedThumbnails_btn_style_bg" devices="desktop" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_left"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_move_left.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlMoveLeft(false);
+"
+           onup="viewControlMoveHoriStop();
+"
+            tooltip="controlBar_dockedThumbnailsmoveLeftTip"
+           devices="desktop"
+           visible="false"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_right_bg" style="controlBar_dockedThumbnails_btn_style_bg" devices="desktop" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_right"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_move_right.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlMoveRight(false);
+"
+           onup="viewControlMoveHoriStop();
+"
+            tooltip="controlBar_dockedThumbnailsmoveRightTip"
+           devices="desktop"
+           visible="false"
+           />
+
+    <layer name="controlBar_dockedThumbnailsbtn_up_bg" style="controlBar_dockedThumbnails_btn_style_bg" devices="desktop" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_up"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_move_up.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlMoveUp(false);
+"
+           onup="viewControlMoveVertStop();
+"
+            tooltip="controlBar_dockedThumbnailsmoveUpTip"
+           devices="desktop"
+           visible="false"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_down_bg" style="controlBar_dockedThumbnails_btn_style_bg" devices="desktop" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_down"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_move_down.png"
+           style="controlBar_dockedThumbnails_btn_down_style"
+           ondown="controlBar_dockedThumbnailsctrl_btn_ondownaction();viewControlMoveDown(false);
+"
+           onup="viewControlMoveVertStop();
+"
+            tooltip="controlBar_dockedThumbnailsmoveDownTip"
+           devices="desktop"
+           visible="false"
+           />
+
+
+    <layer name="controlBar_dockedThumbnailsbtn_sound_on_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_sound_on"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_start_sound.png"
+           onclick="playTourSounds();
+"
+           style="controlBar_dockedThumbnails_btn_style"
+           visible="false"
+           tooltip="controlBar_dockedThumbnailssoundsOnTip"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_sound_off_bg" style="controlBar_dockedThumbnails_btn_style_on_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_sound_off"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_stop_sound.png"
+           onclick="stopTourSounds();
+"
+           style="controlBar_dockedThumbnails_btn_style_on"
+           visible="false"
+           tooltip="controlBar_dockedThumbnailssoundsOffTip"
+           />
+
+<events name="controlBar_dockedThumbnailsvravailableevent"
+		onvravailable="controlBar_dockedThumbnailsupdateVrButtonsAvailability();"
+		onvrunavailable="controlBar_dockedThumbnailsupdateVrButtonsAvailability();"
+		keep="true" devices="html5.and.mobile" />
+	<krpano controlBar_dockedThumbnailsmenuvravailable="false" />
+	<action name="controlBar_dockedThumbnailsupdateVrButtonsAvailability">
+		if (tour_vrdevices,
+			set(controlBar_dockedThumbnailsmenuvravailable, true);
+		,
+			set(controlBar_dockedThumbnailsmenuvravailable, false);
+		);
+		controlBar_dockedThumbnailsupdateVrButtons();
+	</action>
+	<action name="controlBar_dockedThumbnailsHideVrButtons">
+		set(layer[controlBar_dockedThumbnailsbtn_enter_vr].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg].visible, false);
+		if('%1' == 'true' AND plugin[ptpvrmode],
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_not].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg_not].visible, true);
+		,
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_not].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg_not].visible, false);
+		);
+	</action>
+	<action name="controlBar_dockedThumbnailsShowVrButtons">
+		if (controlBar_dockedThumbnailsmenuvravailable,
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_not].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_enter_vr_bg_not].visible, false);
+		,
+			controlBar_dockedThumbnailsHideVrButtons(true);
+		);
+	</action>
+	<action name="controlBar_dockedThumbnailsupdateVrButtons">
+	if (tour_vrdevices,
+		if (controlBar_dockedThumbnailsIsOpened,
+			controlBar_dockedThumbnailsShowVrButtons();
+		,
+			controlBar_dockedThumbnailsHideVrButtons();
+		);
+	,
+		if (controlBar_dockedThumbnailsIsOpened,
+			controlBar_dockedThumbnailsHideVrButtons(true);
+		,
+			controlBar_dockedThumbnailsHideVrButtons();
+		);
+	);
+	</action>
+
+    <layer name="controlBar_dockedThumbnailsbtn_enter_vr_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_enter_vr"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_vr_mode.png"
+           onclick="if(scene[get(xml.scene)].full360,
+    js(accessWebVr(get(xml.scene),get(videoscenestarttime)));
+,
+    js(accessWebVr(null));
+);"
+           style="controlBar_dockedThumbnails_btn_style"
+           visible="false"
+           devices="html5.and.mobile"
+           tooltip="controlBar_dockedThumbnailsenterVRTip"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_enter_vr_bg_not" style="controlBar_dockedThumbnails_btn_style_bg_off" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_enter_vr_not"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_vr_mode_off.png"
+           style="controlBar_dockedThumbnails_btn_style_off"
+           tooltip="controlBar_dockedThumbnailsenterVRNotTip"
+           enabled="true"
+           capture="false"
+           visible="false"
+           devices="html5.and.mobile"
+           />
+
+
+    <layer name="controlBar_dockedThumbnailsbtn_prev_pano_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_prev_pano"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_previous_scene.png"
+           onclick="loadPreviousScene();
+"
+           style="controlBar_dockedThumbnails_btn_style"
+           tooltip="controlBar_dockedThumbnailsprevSceneTip"
+           visible="false"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_next_pano_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_next_pano"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_next_scene.png"
+           onclick="loadNextScene();
+"
+           style="controlBar_dockedThumbnails_btn_style"
+            tooltip="controlBar_dockedThumbnailsnextSceneTip"
+           visible="false"
+           />
+
+
+
+
+
+    <layer name="controlBar_dockedThumbnailsbtn_openfs_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" devices="fullscreensupport" />
+    <layer name="controlBar_dockedThumbnailsbtn_openfs"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_enter_fs.png"
+           onclick="enterFullscreen();
+"
+           style="controlBar_dockedThumbnails_btn_style"
+           visible="false"
+           tooltip="controlBar_dockedThumbnailsopenFsTip"
+           devices="fullscreensupport"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_closefs_bg" style="controlBar_dockedThumbnails_btn_style_on_bg" visible="false" devices="fullscreensupport" />
+    <layer name="controlBar_dockedThumbnailsbtn_closefs"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_close_fs.png"
+           onclick="exitFullscreen();
+"
+           style="controlBar_dockedThumbnails_btn_style_on"
+           visible="false"
+           tooltip="controlBar_dockedThumbnailscloseFsTip"
+           devices="fullscreensupport"
+           />
+
+    <layer name="controlBar_dockedThumbnailsbtn_autorotate_on_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_autorotate_on"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_start_autorotation.png"
+           onclick="resumeautorotation();
+"
+           style="controlBar_dockedThumbnails_btn_style"
+           visible="false"
+            tooltip="controlBar_dockedThumbnailsautorotateOnTip"
+           />
+    <layer name="controlBar_dockedThumbnailsbtn_autorotate_off_bg" style="controlBar_dockedThumbnails_btn_style_on_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_autorotate_off"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_stop_autorotation.png"
+           onclick="pauseautorotation();
+"
+           style="controlBar_dockedThumbnails_btn_style_on"
+           visible="false"
+           tooltip="controlBar_dockedThumbnailsautorotateOffTip"
+           />
+
+
+
+
+
+    <layer name="controlBar_dockedThumbnailsbtn_hidecontrols_bg" style="controlBar_dockedThumbnails_btn_style_bg" visible="false" />
+    <layer name="controlBar_dockedThumbnailsbtn_hidecontrols"
+           url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_hide_controls.png"
+           style="controlBar_dockedThumbnails_btn_style"
+           onclick="controlBar_dockedThumbnailshideMenuControls();hideTourControls();
+"
+           visible="false"
+            tooltip="controlBar_dockedThumbnailshideControlsTip"
+           />
+
+    <layer name="controlBar_dockedThumbnailsbtn_showcontrols"
+                  crop="0| 0|48|48"
+            onovercrop="0|48|48|48"
+            ondowncrop="0|96|48|48"
+            keep="true"
+            url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_show_controls_bg.png"
+            align="bottomright"
+            zorder="2"
+            height="36"
+            width="36"
+            visible="false"
+            y="12"
+            x="0" >
+    <layer name="controlBar_dockedThumbnailsbtn_showcontrols_fg"
+                  crop="0| 0|48|48"
+            onovercrop="0|48|48|48"
+            ondowncrop="0|96|48|48"
+            onclick="controlBar_dockedThumbnailsshowMenuControls();showTourControls();
+"
+            onhover="showTooltip('plugin',controlBar_dockedThumbnailsmenuTooltipStyle);"
+            onout="hideTooltip();"
+            tooltip="controlBar_dockedThumbnailsdisplayControlsTip"
+            keep="true"
+            url="%FIRSTXML%/graphics/dockedthumbscontrolbar/btn_show_controls.png"
+            align="center"
+            height="36"
+            width="36"
+            />
+    </layer>
+
+
+<action name="controlBar_dockedThumbnailshideMenuControls">
+	set(controlBar_dockedThumbnailsIsOpened, false);
+	set(layer[controlBar_dockedThumbnails_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_showcontrols].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_hidecontrols_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_hidecontrols].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_in_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_out_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_in].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_out].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_right_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_left_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_right].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_left].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_down_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_up_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_down].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_up].visible, false);
+	if (scene.count GT 1,
+	set(layer[controlBar_dockedThumbnailsbtn_prev_pano_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_next_pano_bg].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_prev_pano].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_next_pano].visible, false);
+	);
+		controlBar_dockedThumbnailsupdateAutorotationButtons();
+
+		controlBar_dockedThumbnailsupdateSoundButtons();
+		controlBar_dockedThumbnailsupdateVrButtons();
+
+		controlBar_dockedThumbnailsupdateFullscreenButtons();
+</action>
+<action name="controlBar_dockedThumbnailsshowMenuControls">
+	set(controlBar_dockedThumbnailsIsOpened, true);
+      controlBar_dockedThumbnailsupdateFullscreenButtons();
+      controlBar_dockedThumbnailsupdateAutorotationButtons();
+
+      controlBar_dockedThumbnailsupdateSoundButtons();
+	controlBar_dockedThumbnailsupdateVrButtons();
+
+      set(layer[controlBar_dockedThumbnails_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_showcontrols].visible, false);
+	set(layer[controlBar_dockedThumbnailsbtn_hidecontrols_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_hidecontrols].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_in_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_out_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_in].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_out].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_right_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_left_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_right].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_left].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_down_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_up_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_down].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_up].visible, true);
+	if (scene.count GT 1,
+	set(layer[controlBar_dockedThumbnailsbtn_prev_pano_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_next_pano_bg].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_prev_pano].visible, true);
+	set(layer[controlBar_dockedThumbnailsbtn_next_pano].visible, true);
+	);
+	
+	
+</action>
+
+
+
+	<events name="controlBar_dockedThumbnailsmenufullscreenchangeevent"
+		onenterfullscreen="controlBar_dockedThumbnailsupdateFullscreenButtons();"
+		onexitfullscreen="controlBar_dockedThumbnailsupdateFullscreenButtons();"
+		keep="true"/>
+	<action name="controlBar_dockedThumbnailsHideFullscreenButtons">
+		set(layer[controlBar_dockedThumbnailsbtn_openfs].visible , false);
+		set(layer[controlBar_dockedThumbnailsbtn_closefs].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_openfs_bg].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_closefs_bg].visible, false);
+	</action>
+	<action name="controlBar_dockedThumbnailsShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				set(layer[controlBar_dockedThumbnailsbtn_openfs].visible , false);
+				set(layer[controlBar_dockedThumbnailsbtn_closefs].visible, true);
+				set(layer[controlBar_dockedThumbnailsbtn_openfs_bg].visible, false);
+				set(layer[controlBar_dockedThumbnailsbtn_closefs_bg].visible, true);
+			,
+				set(layer[controlBar_dockedThumbnailsbtn_openfs].visible ,true);
+				set(layer[controlBar_dockedThumbnailsbtn_closefs].visible,false);
+				set(layer[controlBar_dockedThumbnailsbtn_openfs_bg].visible, true);
+				set(layer[controlBar_dockedThumbnailsbtn_closefs_bg].visible, false);
+			);
+		,
+			controlBar_dockedThumbnailsHideFullscreenButtons();
+		);
+	</action>
+	<action name="controlBar_dockedThumbnailsupdateFullscreenButtons">
+		if (controlBar_dockedThumbnailsIsOpened,
+			controlBar_dockedThumbnailsShowFullscreenButtons();
+		,
+			controlBar_dockedThumbnailsHideFullscreenButtons();
+		);
+	</action>
+
+	<events name="controlBar_dockedThumbnailsAutorotationEvents"
+		onstartautorotation="controlBar_dockedThumbnailsupdateAutorotationButtons();"
+		onresumeautorotation="controlBar_dockedThumbnailsupdateAutorotationButtons();"
+		onstopautorotation="controlBar_dockedThumbnailsupdateAutorotationButtons();"
+		onpauseautorotation="controlBar_dockedThumbnailsupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="controlBar_dockedThumbnailsHideAutorotationButtons">
+		set(layer[controlBar_dockedThumbnailsbtn_autorotate_off].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_autorotate_on].visible , false);
+		set(layer[controlBar_dockedThumbnailsbtn_autorotate_off_bg].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_autorotate_on_bg].visible , false);
+	</action>
+	<action name="controlBar_dockedThumbnailsShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_off].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_on].visible , true);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_off_bg].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_on_bg].visible , true);
+		,
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_off].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_on].visible , false);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_off_bg].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_autorotate_on_bg].visible , false);
+		);
+	</action>
+	<action name="controlBar_dockedThumbnailsupdateAutorotationButtons">
+		if (controlBar_dockedThumbnailsIsOpened,
+			controlBar_dockedThumbnailsShowAutorotationButtons();
+		,
+			controlBar_dockedThumbnailsHideAutorotationButtons();
+		);
+	</action>
+
+
+	<events name="controlBar_dockedThumbnailsplaystopsoundsevent" playtoursoundsevent="controlBar_dockedThumbnailsupdateSoundButtons();" stoptoursoundsevent="controlBar_dockedThumbnailsupdateSoundButtons();" keep="true"/>
+	<action name="controlBar_dockedThumbnailsHideSoundButtons">
+		set(layer[controlBar_dockedThumbnailsbtn_sound_off].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_sound_on].visible , false);
+		set(layer[controlBar_dockedThumbnailsbtn_sound_off_bg].visible, false);
+		set(layer[controlBar_dockedThumbnailsbtn_sound_on_bg].visible, false);
+	</action>
+	<action name="controlBar_dockedThumbnailsShowSoundButtons">
+		if (tour_soundson == false,
+			set(layer[controlBar_dockedThumbnailsbtn_sound_off].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_on].visible , true);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_off_bg].visible, false);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_on_bg].visible, true);
+		,
+			set(layer[controlBar_dockedThumbnailsbtn_sound_off].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_on].visible , false);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_off_bg].visible, true);
+			set(layer[controlBar_dockedThumbnailsbtn_sound_on_bg].visible, false);
+		);
+	</action>
+	<action name="controlBar_dockedThumbnailsupdateSoundButtons">
+		if (controlBar_dockedThumbnailsIsOpened,
+			controlBar_dockedThumbnailsShowSoundButtons();
+		,
+			controlBar_dockedThumbnailsHideSoundButtons();
+		);
+	</action>
+
+
+	<layer name="controlBar_dockedThumbnailsmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	type="text"
+	align="center"
+	bg="false"
+	bgborder="0"
+	css="color:#aa0002;font-family:Calibri;font-weight:bold;font-size:14px;text-align:left;"
+	edge="bottom"
+	interactivecontent="false"
+	zorder="0"
+	padding="2"
+	xoffset="0"
+	yoffset="0"
+	visible="false"
+	html=""
+	/>
+
+
+
+<!-- ********** -->
+<!-- Simple Button -->
+<!-- id : button -->
+<!-- ********** -->
+
+  <layer name="button"
+         keep="true"
+         url="%FIRSTXML%/graphics/button/access_granted_panotour_logo.png"
+         align="bottomleft"
+         x="0"
+         y="0"
+         zorder="3"
+         visible="false"
+         onclick="buttonOnClick"
+         alpha="0.7"
+         onout="tween(scale, 1.0,0.5,easeOutQuad);tween(alpha,0.7,0.5,easeOutQuad);"
+         onover="tween(scale, 1.2,0.5,easeOutQuad);tween(alpha,1.0,0.5,easeOutQuad);"
+         height="12%"
+         width="10%"
+         />
+
+
+
+  <action name="buttonOnClick">getmessage(urltoopen,buttonopenurlwebsiteurl);openurl(get(urltoopen),_blank);
+
+
+  </action>
+
+  <events name="buttonevents"
+    onTourStart="showbutton();"
+    hidetourcontrols="hidebutton();"
+    showtourcontrols="showbutton();"
+    keep="true" />
+  <action name="hidebutton">set(layer[button].visible, false);</action>
+  <action name="showbutton">if(tour_displaycontrols,set(layer[button].visible, true);,hidebutton(););</action>
+
+
+<!-- ********** -->
+<!-- Panorama Combobox -->
+<!-- id : panoramacombobox -->
+<!-- ********** -->
+
+  <!-- path to the scrollarea plugin -->
+  <panoramacombobox_kr_scrollareaplugin
+    url.html5="%FIRSTXML%/graphics/scrollarea.js"
+    url.flash="%FIRSTXML%/graphics/scrollarea.swf"
+    />
+
+  <!-- core internal layer styles -->
+  <style name="panoramacombobox_kr_container_style" type="container" maskchildren="true" bgcapture="true" visible="false" onclick="panoramacombobox_kr_onclick_event();" mergedalpha="false" alpha="1.0" />
+  <style name="panoramacombobox_kr_marker_style" type="text" align="righttop" edge="center" html="▼" havemarkersize="false" onautosized="set(havemarkersize,true);" mergedalpha="false" alpha="1.0" />
+  <style name="panoramacombobox_kr_item_style"  type="text" wordwrap="false" vcenter="true" align="lefttop" onover="if(!combbox_item_pressed,onoveritem());asyncloop(hovering,,if(!combbox_item_pressed,onoutitem()));" ondown="onoveritem(); set(combbox_item_pressed,true);" onup="onoutitem(); set(combbox_item_pressed,false);" onoveritem="set(bg,true);" onoutitem="set(bg,false);" mergedalpha="false" alpha="1.0" />
+
+  <panoramacombobox_kr_design name="glas" margin="2" open_close_speed="0.25">
+    <style name="panoramacombobox_kr_container_style" bgcolor="0xEEEEEE" bgalpha="0.5" bgborder="1 0x333333 0.5" bgroundedge="5" bgshadow="0 4 10 0x000000 0.3" height="50" />
+    <style name="panoramacombobox_kr_marker_style" css="color:#222222;" alpha="0.7" bg="false" txtshadow="" />
+    <style name="panoramacombobox_kr_group_style" css="color:#222222;font-weight:bold;" padding="4" bg="false" bgborder="1 0x333333 0.0" bgcolor="0xFFFFFF" bgalpha="1" bgroundedge="3" txtshadow="0 0 4 0xFFFFFF 1" onoveritem="set(bg,true); set(bgborder, '1 0x333333 0.5');" onoutitem="set(bg,false); set(bgborder, '1 0x333333 0.0');" />
+    <style name="panoramacombobox_kr_item_style" css="color:#222222;" padding="4" bg="false" bgborder="1 0x333333 0.0" bgcolor="0xFFFFFF" bgalpha="1" bgroundedge="3" txtshadow="0 0 4 0xFFFFFF 1" onoveritem="set(bg,true); set(bgborder, '1 0x333333 0.5');" onoutitem="set(bg,false); set(bgborder, '1 0x333333 0.0');" />
+  </panoramacombobox_kr_design>
+
+  <!-- internal events -->
+  <events name="panoramacombobox_kr_xml_plugin_events" keep="true"
+    onxmlcomplete="panoramacombobox_kr_parse_xml_elements();"
+    onresize="panoramacombobox_kr_closelist();"
+    />
+
+  <!-- krpano version check -->
+  <action name="panoramacombobox_kr_versioncheck" autorun="preinit">
+    if(build LT '2017-09-13',
+      error('combobox.xml - too old krpano version!');
+      set(events[panoramacombobox_kr_xml_plugin_events].name, null);
+      set(action[panoramacombobox_kr_addComboboxLayer].content, '');
+      set(action[panoramacombobox_kr_removeComboboxLayer].content, '');
+    );
+  </action>
+
+  <action name="panoramacombobox_kr_parse_xml_elements" scope="local">
+        copy(cb, combobox["panoramacombobox"]);
+        if(cb AND cb.name AND cb.parsed != true,
+          set(cb.parsed, true);
+          panoramacombobox_kr_addComboboxLayer(get(cb.name), get(cb.design));
+          copy(ly, layer[get(cb.name)]);
+          copyattributes(get(ly), get(cb));
+          set(ly.keep, true);
+          def(item_cnt, integer, get(cb.item.count));
+          if(item_cnt GT 0,
+            def(item_i, integer, 0);
+            loop(item_i LT  item_cnt,
+              panoramacombobox_kr_additem(get(ly.name), get(cb.item[get(item_i)].name), get(cb.item[get(item_i)].caption), get(cb.item[get(item_i)].onclick));
+              inc(item_i);
+            );
+          );
+        );
+  </action>
+
+  <!-- dynamically add a combobox layer -->
+  <action name="panoramacombobox_kr_addComboboxLayer" scope="local" args="cbname, design">
+    <!-- create the layer -->
+    addlayer(get(cbname));
+    copy(cb, layer[get(cbname)]);
+    set(cb.keep, true);
+
+    <!-- copy the design settings (or set defaults) -->
+    if(!panoramacombobox_kr_design[get(design)].name, set(design,'default'));
+    copy(cb.cbdesign, panoramacombobox_kr_design[get(design)]);
+    calc(cb.margin, cb.cbdesign.margin !== null ? cb.cbdesign.margin : 2);
+    calc(cb.open_close_speed, cb.cbdesign.open_close_speed !== null ? cb.cbdesign.open_close_speed : 0.25);
+    <!-- load the styles and copy the design style settings -->
+    cb.loadstyle(panoramacombobox_kr_container_style);
+    copyattributes(get(cb), get(cb.cbdesign.style[panoramacombobox_kr_container_style]));
+
+    <!-- add/build/map actions -->
+    calc(cb.addItem,          'panoramacombobox_kr_additem(' + cbname + ', null, "%%1", "%%2");');
+    calc(cb.addNamedItem,     'panoramacombobox_kr_additem(' + cbname + ', "%%1", "%%2", "%%3");');
+    calc(cb.addIdItem,        'panoramacombobox_kr_additem(' + cbname + ', "%%1", "%%2", "%%3");');
+    calc(cb.selectItem,       'panoramacombobox_kr_finditem(' + cbname + ', "%%1", __cb_fi); if(__cb_fi GE 0, panoramacombobox_kr_selectitem(' + cbname + ', get(__cb_fi))); delete(__cb_fi);');
+    calc(cb.selectItemByName, 'panoramacombobox_kr_selectitem(' + cbname + ', "%%1");');
+    calc(cb.selectIdItem,     'panoramacombobox_kr_selectitem(' + cbname + ', "%%1");');
+    calc(cb.removeAll,        'panoramacombobox_kr_removeitems(' + cbname + ');');
+    calc(cb.openList,         'panoramacombobox_kr_openlist(' + cbname + ');');
+    calc(cb.closeList,        'panoramacombobox_kr_closelist(' + cbname + ');');
+
+    <!-- create sub-layers -->
+    def(saname, string, 'panoramacombobox_kr_%1_scrollarea');
+    addlayer(get(saname));
+    copy(sa, layer[get(saname)]);
+    copy(sa.parent, cbname);
+    copy(sa.url, panoramacombobox_kr_scrollareaplugin.url);
+    copy(sa.keep, true);
+    copy(sa.align, lefttop);
+    set(sa.direction, v);
+    set(sa.enabled, false);
+    set(sa.width, 100%);
+    set(sa.height, 100%);
+    copy(cb.scrollarea, sa);
+
+    def(mkname, string, 'panoramacombobox_kr_%1_marker');
+    addlayer(get(mkname));
+    copy(mk, layer[get(mkname)]);
+    copy(mk.parent, saname);
+    copy(mk.keep, true);
+    mk.loadstyle(panoramacombobox_kr_marker_style);
+    copyattributes(get(mk), get(cb.cbdesign.style[panoramacombobox_kr_marker_style]));
+    copy(cb.marker, mk);
+
+    <!-- item data array -->
+    cb.createarray('item');
+
+    <!-- item autosizing information -->
+    set(cb.autosize_i, 0);
+    set(cb.autosize_cnt, 0);
+    set(cb.autosize_max_w, 0);
+    set(cb.autosize_max_h, 0);
+
+    set(cb.lastselecteditemindex, 0);
+    set(cb.selecteditemindex, 0);
+  </action>
+
+
+  <!-- dynamically remove a combobox element -->
+  <action name="panoramacombobox_kr_removeComboboxLayer" scope="local" args="cbname">
+    if(layer[get(cbname)],
+      copy(cb, layer[get(cbname)]);
+      if(cb === global.openedcombobox, delete(global.openedcombobox));
+      if(cb,
+        removelayer(get(cbname), true);
+      );
+    );
+  </action>
+
+
+  <!-- default onclick event for combobox elements: open the list -->
+  <action name="panoramacombobox_kr_onclick_event">
+    panoramacombobox_kr_openlist(get(name));
+  </action>
+
+
+  <!-- dynamically add items -->
+  <action name="panoramacombobox_kr_additem" scope="local" args="cbname, itemname, itemcaption, itemonclick">
+    copy(cb, layer[get(cbname)]);
+
+    <!-- when no item name is set, generate an automatic one -->
+    if(itemname === null, calc(itemname, 'autoname_' + cb.item.count); );
+
+    <!-- save the item caption and onclick event -->
+    copy(cb.item[get(itemname)].caption, itemcaption);
+    copy(cb.item[get(itemname)].onclick, itemonclick);
+
+    inc(cb.autosize_cnt);
+
+    <!-- create the item layer/textfield -->
+    calc(itemlayername, 'comboboxitem_' + cbname + '_' + itemname);
+    addlayer(get(itemlayername));
+    copy(li, layer[get(itemlayername)]);
+
+
+
+    li.loadstyle(panoramacombobox_kr_item_style);
+    indexoftxt(itemisagroup, get(itemname), "panogroup");
+    if (itemisagroup != -1,
+      copyattributes(get(li), get(cb.cbdesign.style[panoramacombobox_kr_group_style]));
+     ,
+    copyattributes(get(li), get(cb.cbdesign.style[panoramacombobox_kr_item_style]));
+    );
+
+
+
+
+    copy(li.parent, cb.scrollarea.name);
+    copy(li.keep, true);
+    copy(li.cblayername, cb.name);
+    copy(li.itemname, itemname);
+    copy(li.html, itemcaption);
+    set(li.onautosized, delayedcall(0,panoramacombobox_kr_item_autosize_update()) );
+    set(li.onclick, panoramacombobox_kr_item_onclick() );
+
+    copy(cb.item[get(itemname)].itemlayername, itemlayername);
+  </action>
+
+
+  <!-- onautosized callback from the item textfield -->
+  <action name="panoramacombobox_kr_item_autosize_update" scope="local">
+    copy(cb, layer[get(caller.cblayername)]);
+    inc(cb.autosize_i);
+    Math.max(cb.autosize_max_w, caller.width);
+    Math.max(cb.autosize_max_h, caller.height);
+    if(cb.autosize_i == cb.autosize_cnt, panoramacombobox_kr_align_items(get(cb.name)); );
+  </action>
+
+
+  <!-- align the image and set the combobox size -->
+  <action name="panoramacombobox_kr_align_items" scope="local" args="cbname">
+    copy(cb, layer[get(cbname)]);
+    if(cb.marker.havemarkersize == false OR cb.scrollarea.loaded == false,
+      <!-- wait until everything is ready -->
+      delayedcall(calc(cb.name + '_waitformarkersize'), 0.01, panoramacombobox_kr_align_items(get(cbname)) );
+      ,
+      <!-- set the item positions and the combobox size -->
+      if(global.openedcombobox === cb, panoramacombobox_kr_closelist() );
+      copy(sa, cb.scrollarea);
+      calc(itemwidth, cb.margin GT 0 ? -2 * cb.margin : '100%');
+      copy(mk_w, cb.marker.width);
+      copy(item_cnt, cb.autosize_cnt);
+
+      for(def(item_i, integer, 0), item_i LT item_cnt, inc(item_i),
+        copy(li, layer[get(cb.item[get(item_i)].itemlayername)]);
+        set(li.x, get(cb.margin));
+        copy(li.width, itemwidth);
+        copy(li.height, cb.autosize_max_h);
+        calc(li.y, cb.margin + item_i * (cb.autosize_max_h + cb.margin));
+      );
+
+      if(cb.width == null OR cb.width == cb.lastautosizedwidth,
+        <!-- no combobox width (or an autosized width) set - set the largest item width -->
+        calc(cb.width, cb.margin + cb.autosize_max_w + 2 + mk_w + cb.margin);
+        copy(cb.lastautosizedwidth, cb.width);
+      );
+
+      calc(cb.height, 2*cb.margin + cb.autosize_max_h);
+      calc(sa.height, cb.margin + item_cnt*(cb.margin+cb.autosize_max_h));
+      calc(sa.y, -(cb.selecteditemindex * (cb.autosize_max_h + cb.margin)));
+      calc(cb.marker.x, cb.margin + mk_w/2);
+      tween(layer[get(cb.name)].marker.y, calc(cb.margin + cb.selecteditemindex*(cb.autosize_max_h + cb.margin) + cb.autosize_max_h/2), 0.1);
+    );
+  </action>
+
+
+  <!-- default onclick event for items: select the current item, close the list and call the item onclick event -->
+  <action name="panoramacombobox_kr_item_onclick" scope="local">
+    copy(cb, layer[get(caller.cblayername)]);
+    copy(itemname, caller.itemname);
+    panoramacombobox_kr_selectitem(get(cb.name), get(itemname));
+
+    if(global.openedcombobox === cb, panoramacombobox_kr_closelist() );
+
+    if(cb.item[get(itemname)].onclick,
+      <!-- call the onclick event after the combobox has closed -->
+      delayedcall(get(cb.open_close_speed),
+        copy(cb.curitem, cb.item[get(itemname)]);
+        callwith(cb,
+          cb.item[get(itemname)].onclick();
+        );
+      );
+    );
+  </action>
+
+
+  <!-- select an item -->
+  <action name="panoramacombobox_kr_selectitem" scope="local" args="cbname, itemname">
+    if(global.combbox_item_pressed != true,
+      copy(cb, layer[get(cbname)]);
+      copy(cb.lastselecteditemindex, cb.selecteditemindex);
+      copy(cb.selecteditemindex, cb.item[get(itemname)].index);
+      <!-- call onchange event on selection change -->
+      if(cb.lastselecteditemindex != cb.selecteditemindex AND cb.onchange,
+        callwith(cb, onchange() );
+      );
+      if(global.openedcombobox === cb,
+        <!-- when opened, just close to the selected item -->
+        panoramacombobox_kr_closelist();
+        ,
+        if(layer[get(cbname)].scrollarea.loaded,
+          layer[get(cbname)].scrollarea.stopscrolling();
+          calc(offset, cb.selecteditemindex*(cb.autosize_max_h + cb.margin));
+          tween(layer[get(cbname)].marker.y, calc(cb.margin + offset + cb.autosize_max_h/2), 0);
+          tween(layer[get(cbname)].scrollarea.y, calc(-offset), 0, default, layer[get(cbname)].scrollarea.update(); );
+        );
+      );
+    );
+  </action>
+
+
+  <!-- find an item by its caption, the global variable defined in 'returnvariable' will contain the index  -->
+  <action name="panoramacombobox_kr_finditem" scope="local" args="cbname, itemcaption, returnvariable">
+    copy(cb, layer[get(cbname)]);
+    copy(item_cnt, cb.item.count);
+    set(calc('global.' + returnvariable), -1);
+    for(def(item_i, integer, 0), item_i LT  item_cnt, inc(item_i),
+      if(cb.item[get(item_i)].caption == itemcaption,
+        copy(calc('global.' + returnvariable), item_i);
+        copy(item_i, item_cnt);
+      );
+    );
+  </action>
+
+
+  <!-- remove all items (to be able to add new ones) -->
+  <action name="panoramacombobox_kr_removeitems" scope="local" args="cbname">
+    copy(cb, layer[get(cbname)]);
+    if(global.openedcombobox === cb, panoramacombobox_kr_closelist() );
+
+    <!-- remove all item layers -->
+    calc(item_i, cb.item.count - 1);
+    loop(item_i GE 0,
+      removelayer(get(cb.item[get(item_i)].itemlayername));
+      dec(item_i);
+    );
+
+    <!-- reset the item information -->
+    set(cb.item.count, 0);
+    set(cb.autosize_i,0);
+    set(cb.autosize_cnt, 0);
+    set(cb.autosize_max_w, 0);
+    set(cb.autosize_max_h, 0);
+    set(cb.selecteditemindex, 0);
+    set(cb.lastselecteditemindex, 0);
+    if(cb.width == cb.lastautosizedwidth, set(cb.width, null));
+  </action>
+
+
+  <!-- open the combobox list -->
+  <action name="panoramacombobox_kr_openlist" scope="local" args="cbname">
+    <!-- if another combobox is already open, close that one first -->
+    if(global.openedcombobox !== null, panoramacombobox_kr_closelist() );
+
+    copy(cb, layer[get(cbname)]);
+    copy(global.openedcombobox, cb);
+
+    <!-- find the available screen space above or below the combobox -->
+    calc(cbheight, 2*cb.margin + cb.autosize_max_h);
+    set(lx1, 0);
+    set(ly1, 0);
+    copy(lx2, cb.pixelwidth);
+    copy(ly2, cbheight);
+    layertoscreen(get(cbname), lx1,ly1, lx1,ly1);
+    layertoscreen(get(cbname), lx2,ly2, lx2,ly2);
+    calc(space_above, ly1 - area.pixely);
+    calc(space_below, area.pixelheight - (ly2 - area.pixely));
+
+    <!-- the required space for full opening: -->
+    calc(openheight, cb.margin + cb.autosize_cnt*(cb.margin+cb.autosize_max_h) );
+
+    <!-- vertical centered alignment? -->
+    calc(cb_edge, cb.edge ? cb.edge : cb.align);
+    calc(iscentered, cb_edge == 'left' OR cb_edge == 'center' OR cb_edge == 'right');
+    if(iscentered,
+      calc(openheight_max, space_above + space_below);
+      ,
+      Math.max(openheight_max, space_above, space_below);
+    );
+
+    <!-- limit the height to the available space (minus some margin) -->
+    Math.min(openheight, calc(openheight_max + cbheight - 20));
+
+    <!-- need vertical offset? (depending on the available space and the align/edge setting) -->
+    set(yoffset, null);
+    calc(top_overflow, -ly1 + area.pixely + openheight/2);
+    calc(bottom_overflow, ly2 - area.pixely + openheight/2 - area.pixelheight);
+    if(cb.parent,
+      <!-- no vertical offset inside other layers, do only a height clipping -->
+      Math.max(max_overflow, top_overflow, bottom_overflow, 0);
+      sub(openheight, max_overflow);
+      ,
+      if(iscentered,
+        if(openheight GE (area.pixelheight - 20),
+          set(yoffset,0);
+          ,
+          if(top_overflow GT 0, calc(yoffset, cb.y + top_overflow); );
+          if(bottom_overflow GT 0, calc(yoffset, cb.y - bottom_overflow); );
+        );
+      ,
+        indexoftxt(isbottomalign, get(cb_edge), 'bottom');
+        if(space_above GT space_below,
+          if(isbottomalign LT 0, calc(yoffset, cb.y - openheight + cbheight); );
+          ,
+          if(isbottomalign GE 0, calc(yoffset, cb.y - openheight + cbheight); );
+        );
+      );
+    );
+    if(yoffset != null,
+      copy(cb.ybackup, cb.y);
+      tween(layer[get(cbname)].y, calc(yoffset), get(cb.open_close_speed));
+    );
+
+    <!-- center the opened list at the selected item -->
+    calc(centeritem_y, -1 * (cb.margin + cb.selecteditemindex*(cb.margin+cb.autosize_max_h) + cb.autosize_max_h/2 - openheight/2));
+    clamp(centeritem_y, calc(openheight - cb.scrollarea.height), 0);
+
+    <!-- apply the changes now -->
+    tween(layer[get(cbname)].height, get(openheight), get(cb.open_close_speed));
+    tween(layer[get(cbname)].scrollarea.y, get(centeritem_y), get(cb.open_close_speed), default, layer[get(cbname)].scrollarea.update(); );
+
+    <!-- special html5/flash case:
+       rotating textfields (the marker symbol here) are not possible in
+       flash (a flashplayer limitation), so use a rotated symbol instead.
+    -->
+    if(device.html5,
+      tween(layer[get(cbname)].marker.rotate, 90, get(cb.open_close_speed));
+      ,
+      set(layer[get(cbname)].marker.html, '◀');
+    );
+
+    <!-- enable the scrollarea to allow the user to drag it -->
+    set(cb.scrollarea.enabled, true);
+
+    <!-- install a global onmousedown event to close the list when clicking at the pano -->
+    set(events[panoramacombobox_kr_xml_plugin_events].onmousedown, panoramacombobox_kr_closelist() );
+  </action>
+
+
+  <!-- close the current open list -->
+  <action name="panoramacombobox_kr_closelist" scope="local">
+    if(global.openedcombobox !== null,
+      copy(cb, global.openedcombobox);
+      delete(global.openedcombobox);
+
+      <!-- clear the global onmousedown event -->
+      set(events[panoramacombobox_kr_xml_plugin_events].onmousedown, null);
+
+      <!-- disable the dragging -->
+      set(cb.scrollarea.enabled, false);
+
+      <!-- closing animations -->
+      calc(offset, cb.selecteditemindex*(cb.autosize_max_h + cb.margin));
+      if(cb.ybackup !== null, tween(cb.y, get(cb.ybackup), get(cb.open_close_speed)));
+      layer[get(cb.name)].scrollarea.stopscrolling();
+      tween(layer[get(cb.name)].height, calc(2*cb.margin + cb.autosize_max_h), get(cb.open_close_speed));
+      tween(layer[get(cb.name)].scrollarea.y, calc(-offset), get(cb.open_close_speed), default, layer[get(cb.name)].scrollarea.update(); );
+      tween(layer[get(cb.name)].marker.y, calc(cb.margin + offset + cb.autosize_max_h/2), get(cb.open_close_speed));
+      <!-- special html5/flash case: rotate marker or change symbol -->
+      if(device.html5,
+        tween(layer[get(cb.name)].marker.rotate, 0, get(cb.open_close_speed));
+        ,
+        set(layer[get(cb.name)].marker.html, '▼');
+      );
+    );
+  </action>
+
+  <events name="panoramacomboboxStartTourEvents" onTourStart="set(layer[panoramacombobox].isStarted, true);if(layer[panoramacombobox].isLoaded,panoramacomboboxShow(););" keep="true" />
+
+
+  <combobox name="panoramacombobox"
+    design=""
+    keep="true"
+    visible="false"
+    zorder="4"
+    align="topleft"
+    x="5" y="10"
+    onloaded="panoramacomboboxLoaded();"
+    isStarted="false"
+    isLoaded="false"
+    />
+
+  <action name="panoramacomboboxLoaded">
+
+    layer[panoramacombobox].removeAll();
+
+
+    panoramacomboboxAddItem(panogroup107_title, panogroup107, pano104, false);
+    panoramacomboboxAddItem(pano104_title, pano104, pano104, true);
+    panoramacomboboxAddItem(pano108_title, pano108, pano108, true);
+    panoramacomboboxAddItem(pano1617_title, pano1617, pano1617, true);
+    panoramacomboboxAddItem(pano123_title, pano123, pano123, true);
+    panoramacomboboxAddItem(pano245_title, pano245, pano245, true);
+    panoramacomboboxAddItem(pano161_title, pano161, pano161, true);
+    panoramacomboboxAddItem(pano181_title, pano181, pano181, true);
+    panoramacomboboxAddItem(pano211_title, pano211, pano211, true);
+    panoramacomboboxAddItem(pano233_title, pano233, pano233, true);
+    panoramacomboboxAddItem(pano252_title, pano252, pano252, true);
+    panoramacomboboxAddItem(pano270_title, pano270, pano270, true);
+    panoramacomboboxAddItem(panogroup546_title, panogroup546, pano533, false);
+    panoramacomboboxAddItem(pano533_title, pano533, pano533, true);
+    panoramacomboboxAddItem(pano538_title, pano538, pano538, true);
+    panoramacomboboxAddItem(pano598_title, pano598, pano598, true);
+    panoramacomboboxAddItem(pano619_title, pano619, pano619, true);
+    panoramacomboboxAddItem(pano655_title, pano655, pano655, true);
+    panoramacomboboxAddItem(pano667_title, pano667, pano667, true);
+    panoramacomboboxAddItem(pano695_title, pano695, pano695, true);
+    panoramacomboboxAddItem(panogroup1105_title, panogroup1105, pano1100, false);
+    panoramacomboboxAddItem(pano1100_title, pano1100, pano1100, true);
+    panoramacomboboxAddItem(pano1102_title, pano1102, pano1102, true);
+    panoramacomboboxAddItem(pano1104_title, pano1104, pano1104, true);
+    panoramacomboboxAddItem(panogroup1116_title, panogroup1116, pano1117, false);
+    panoramacomboboxAddItem(pano1117_title, pano1117, pano1117, true);
+    panoramacomboboxAddItem(pano1119_title, pano1119, pano1119, true);
+    panoramacomboboxAddItem(panogroup1129_title, panogroup1129, pano1128, false);
+    panoramacomboboxAddItem(pano1128_title, pano1128, pano1128, true);
+    panoramacomboboxAddItem(pano1130_title, pano1130, pano1130, true);
+    panoramacomboboxAddItem(pano1458_title, pano1458, pano1458, true);
+    panoramacomboboxAddItem(pano1462_title, pano1462, pano1462, true);
+    panoramacomboboxAddItem(pano1468_title, pano1468, pano1468, true);
+    panoramacomboboxAddItem(pano1473_title, pano1473, pano1473, true);
+    panoramacomboboxAddItem(panogroup1508_title, panogroup1508, pano1507, false);
+    panoramacomboboxAddItem(pano1507_title, pano1507, pano1507, true);
+    panoramacomboboxAddItem(pano1515_title, pano1515, pano1515, true);
+    panoramacomboboxAddItem(pano1522_title, pano1522, pano1522, true);
+    panoramacomboboxAddItem(panogroup1558_title, panogroup1558, pano1557, false);
+    panoramacomboboxAddItem(pano1557_title, pano1557, pano1557, true);
+    panoramacomboboxAddItem(pano1589_title, pano1589, pano1589, true);
+    panoramacomboboxAddItem(pano106_title, pano106, pano106, false);
+    panoramacomboboxAddItem(pano115_title, pano115, pano115, false);
+    panoramacomboboxAddItem(pano119_title, pano119, pano119, false);
+    panoramacomboboxAddItem(pano127_title, pano127, pano127, false);
+    panoramacomboboxAddItem(pano131_title, pano131, pano131, false);
+    panoramacomboboxAddItem(pano137_title, pano137, pano137, false);
+    panoramacomboboxAddItem(pano143_title, pano143, pano143, false);
+    panoramacomboboxAddItem(pano147_title, pano147, pano147, false);
+    panoramacomboboxAddItem(pano153_title, pano153, pano153, false);
+    panoramacomboboxAddItem(pano157_title, pano157, pano157, false);
+    panoramacomboboxAddItem(pano165_title, pano165, pano165, false);
+    panoramacomboboxAddItem(pano169_title, pano169, pano169, false);
+    panoramacomboboxAddItem(pano173_title, pano173, pano173, false);
+    panoramacomboboxAddItem(pano177_title, pano177, pano177, false);
+    panoramacomboboxAddItem(pano185_title, pano185, pano185, false);
+    panoramacomboboxAddItem(pano189_title, pano189, pano189, false);
+    panoramacomboboxAddItem(pano194_title, pano194, pano194, false);
+    panoramacomboboxAddItem(pano197_title, pano197, pano197, false);
+    panoramacomboboxAddItem(pano203_title, pano203, pano203, false);
+    panoramacomboboxAddItem(pano207_title, pano207, pano207, false);
+    panoramacomboboxAddItem(pano214_title, pano214, pano214, false);
+    panoramacomboboxAddItem(pano218_title, pano218, pano218, false);
+    panoramacomboboxAddItem(pano225_title, pano225, pano225, false);
+    panoramacomboboxAddItem(pano237_title, pano237, pano237, false);
+    panoramacomboboxAddItem(pano240_title, pano240, pano240, false);
+    panoramacomboboxAddItem(pano249_title, pano249, pano249, false);
+    panoramacomboboxAddItem(pano259_title, pano259, pano259, false);
+    panoramacomboboxAddItem(pano263_title, pano263, pano263, false);
+    panoramacomboboxAddItem(pano273_title, pano273, pano273, false);
+    panoramacomboboxAddItem(pano278_title, pano278, pano278, false);
+    panoramacomboboxAddItem(pano542_title, pano542, pano542, false);
+    panoramacomboboxAddItem(pano548_title, pano548, pano548, false);
+    panoramacomboboxAddItem(pano552_title, pano552, pano552, false);
+    panoramacomboboxAddItem(pano556_title, pano556, pano556, false);
+    panoramacomboboxAddItem(pano562_title, pano562, pano562, false);
+    panoramacomboboxAddItem(pano566_title, pano566, pano566, false);
+    panoramacomboboxAddItem(pano570_title, pano570, pano570, false);
+    panoramacomboboxAddItem(pano574_title, pano574, pano574, false);
+    panoramacomboboxAddItem(pano578_title, pano578, pano578, false);
+    panoramacomboboxAddItem(pano584_title, pano584, pano584, false);
+    panoramacomboboxAddItem(pano588_title, pano588, pano588, false);
+    panoramacomboboxAddItem(pano592_title, pano592, pano592, false);
+    panoramacomboboxAddItem(pano600_title, pano600, pano600, false);
+    panoramacomboboxAddItem(pano605_title, pano605, pano605, false);
+    panoramacomboboxAddItem(pano611_title, pano611, pano611, false);
+    panoramacomboboxAddItem(pano615_title, pano615, pano615, false);
+    panoramacomboboxAddItem(pano623_title, pano623, pano623, false);
+    panoramacomboboxAddItem(pano627_title, pano627, pano627, false);
+    panoramacomboboxAddItem(pano632_title, pano632, pano632, false);
+    panoramacomboboxAddItem(pano636_title, pano636, pano636, false);
+    panoramacomboboxAddItem(pano640_title, pano640, pano640, false);
+    panoramacomboboxAddItem(pano643_title, pano643, pano643, false);
+    panoramacomboboxAddItem(pano663_title, pano663, pano663, false);
+    panoramacomboboxAddItem(pano647_title, pano647, pano647, false);
+    panoramacomboboxAddItem(pano659_title, pano659, pano659, false);
+    panoramacomboboxAddItem(pano651_title, pano651, pano651, false);
+    panoramacomboboxAddItem(pano671_title, pano671, pano671, false);
+    panoramacomboboxAddItem(pano675_title, pano675, pano675, false);
+    panoramacomboboxAddItem(pano680_title, pano680, pano680, false);
+    panoramacomboboxAddItem(pano684_title, pano684, pano684, false);
+    panoramacomboboxAddItem(pano688_title, pano688, pano688, false);
+    panoramacomboboxAddItem(pano699_title, pano699, pano699, false);
+    panoramacomboboxAddItem(pano703_title, pano703, pano703, false);
+    panoramacomboboxAddItem(pano709_title, pano709, pano709, false);
+    panoramacomboboxAddItem(pano1115_title, pano1115, pano1115, false);
+    panoramacomboboxAddItem(pano1437_title, pano1437, pano1437, false);
+    panoramacomboboxAddItem(pano1442_title, pano1442, pano1442, false);
+    panoramacomboboxAddItem(pano1465_title, pano1465, pano1465, false);
+    panoramacomboboxAddItem(pano1476_title, pano1476, pano1476, false);
+    panoramacomboboxAddItem(pano1478_title, pano1478, pano1478, false);
+    panoramacomboboxAddItem(pano1484_title, pano1484, pano1484, false);
+    panoramacomboboxAddItem(pano1488_title, pano1488, pano1488, false);
+    panoramacomboboxAddItem(pano1491_title, pano1491, pano1491, false);
+    panoramacomboboxAddItem(pano1496_title, pano1496, pano1496, false);
+    panoramacomboboxAddItem(pano1499_title, pano1499, pano1499, false);
+    panoramacomboboxAddItem(pano1503_title, pano1503, pano1503, false);
+    panoramacomboboxAddItem(pano1511_title, pano1511, pano1511, false);
+    panoramacomboboxAddItem(pano1519_title, pano1519, pano1519, false);
+    panoramacomboboxAddItem(pano1528_title, pano1528, pano1528, false);
+    panoramacomboboxAddItem(pano1533_title, pano1533, pano1533, false);
+    panoramacomboboxAddItem(pano1535_title, pano1535, pano1535, false);
+    panoramacomboboxAddItem(pano1541_title, pano1541, pano1541, false);
+    panoramacomboboxAddItem(pano1545_title, pano1545, pano1545, false);
+    panoramacomboboxAddItem(pano1548_title, pano1548, pano1548, false);
+    panoramacomboboxAddItem(pano1553_title, pano1553, pano1553, false);
+    panoramacomboboxAddItem(pano1561_title, pano1561, pano1561, false);
+    panoramacomboboxAddItem(pano1565_title, pano1565, pano1565, false);
+    panoramacomboboxAddItem(pano1570_title, pano1570, pano1570, false);
+    panoramacomboboxAddItem(pano1575_title, pano1575, pano1575, false);
+    panoramacomboboxAddItem(pano1579_title, pano1579, pano1579, false);
+    panoramacomboboxAddItem(pano1583_title, pano1583, pano1583, false);
+    panoramacomboboxAddItem(pano1592_title, pano1592, pano1592, false);
+    panoramacomboboxAddItem(pano1597_title, pano1597, pano1597, false);
+    panoramacomboboxAddItem(pano1601_title, pano1601, pano1601, false);
+    panoramacomboboxAddItem(pano1606_title, pano1606, pano1606, false);
+    panoramacomboboxAddItem(pano1613_title, pano1613, pano1613, false);
+    panoramacomboboxAddItem(pano1621_title, pano1621, pano1621, false);
+    panoramacomboboxAddItem(pano1625_title, pano1625, pano1625, false);
+    panoramacomboboxAddItem(pano1629_title, pano1629, pano1629, false);
+    panoramacomboboxAddItem(pano1633_title, pano1633, pano1633, false);
+    set(layer[panoramacombobox].isLoaded, true);
+
+    if(layer[panoramacombobox].isStarted,
+      panoramacomboboxShow();
+    );
+  </action>
+
+
+  <action name="panoramacomboboxAddItem">
+    getmessage(caption, %1);
+
+    indexoftxt(found, get(caption), '&amp;');
+    if(found GE 0,
+      subtxt(part1, get(caption), 0, get(found));
+      add(found, 1);
+      subtxt(part2, get(caption), get(found), get(caption.length));
+      txtadd(caption, get(part1), '&amp;', get(part2));
+    );
+    if(%4,
+      txtadd(title, "&#x00A0;&#x00A0;&#x00A0;", get(caption));
+    ,
+      set(title, get(caption));
+    );
+
+    layer[panoramacombobox].addNamedItem(%2, get(title), mainloadscene(%3));
+  </action>
+
+  <action name="panoramacomboboxUpdateLanguage">
+    layer[panoramacombobox].closeList();
+    layer[panoramacombobox].removeAll();
+
+    panoramacomboboxAddItem(panogroup107_title, panogroup107, pano104, false);
+    panoramacomboboxAddItem(pano104_title, pano104, pano104, true);
+    panoramacomboboxAddItem(pano108_title, pano108, pano108, true);
+    panoramacomboboxAddItem(pano1617_title, pano1617, pano1617, true);
+    panoramacomboboxAddItem(pano123_title, pano123, pano123, true);
+    panoramacomboboxAddItem(pano245_title, pano245, pano245, true);
+    panoramacomboboxAddItem(pano161_title, pano161, pano161, true);
+    panoramacomboboxAddItem(pano181_title, pano181, pano181, true);
+    panoramacomboboxAddItem(pano211_title, pano211, pano211, true);
+    panoramacomboboxAddItem(pano233_title, pano233, pano233, true);
+    panoramacomboboxAddItem(pano252_title, pano252, pano252, true);
+    panoramacomboboxAddItem(pano270_title, pano270, pano270, true);
+    panoramacomboboxAddItem(panogroup546_title, panogroup546, pano533, false);
+    panoramacomboboxAddItem(pano533_title, pano533, pano533, true);
+    panoramacomboboxAddItem(pano538_title, pano538, pano538, true);
+    panoramacomboboxAddItem(pano598_title, pano598, pano598, true);
+    panoramacomboboxAddItem(pano619_title, pano619, pano619, true);
+    panoramacomboboxAddItem(pano655_title, pano655, pano655, true);
+    panoramacomboboxAddItem(pano667_title, pano667, pano667, true);
+    panoramacomboboxAddItem(pano695_title, pano695, pano695, true);
+    panoramacomboboxAddItem(panogroup1105_title, panogroup1105, pano1100, false);
+    panoramacomboboxAddItem(pano1100_title, pano1100, pano1100, true);
+    panoramacomboboxAddItem(pano1102_title, pano1102, pano1102, true);
+    panoramacomboboxAddItem(pano1104_title, pano1104, pano1104, true);
+    panoramacomboboxAddItem(panogroup1116_title, panogroup1116, pano1117, false);
+    panoramacomboboxAddItem(pano1117_title, pano1117, pano1117, true);
+    panoramacomboboxAddItem(pano1119_title, pano1119, pano1119, true);
+    panoramacomboboxAddItem(panogroup1129_title, panogroup1129, pano1128, false);
+    panoramacomboboxAddItem(pano1128_title, pano1128, pano1128, true);
+    panoramacomboboxAddItem(pano1130_title, pano1130, pano1130, true);
+    panoramacomboboxAddItem(pano1458_title, pano1458, pano1458, true);
+    panoramacomboboxAddItem(pano1462_title, pano1462, pano1462, true);
+    panoramacomboboxAddItem(pano1468_title, pano1468, pano1468, true);
+    panoramacomboboxAddItem(pano1473_title, pano1473, pano1473, true);
+    panoramacomboboxAddItem(panogroup1508_title, panogroup1508, pano1507, false);
+    panoramacomboboxAddItem(pano1507_title, pano1507, pano1507, true);
+    panoramacomboboxAddItem(pano1515_title, pano1515, pano1515, true);
+    panoramacomboboxAddItem(pano1522_title, pano1522, pano1522, true);
+    panoramacomboboxAddItem(panogroup1558_title, panogroup1558, pano1557, false);
+    panoramacomboboxAddItem(pano1557_title, pano1557, pano1557, true);
+    panoramacomboboxAddItem(pano1589_title, pano1589, pano1589, true);
+    panoramacomboboxAddItem(pano106_title, pano106, pano106, false);
+    panoramacomboboxAddItem(pano115_title, pano115, pano115, false);
+    panoramacomboboxAddItem(pano119_title, pano119, pano119, false);
+    panoramacomboboxAddItem(pano127_title, pano127, pano127, false);
+    panoramacomboboxAddItem(pano131_title, pano131, pano131, false);
+    panoramacomboboxAddItem(pano137_title, pano137, pano137, false);
+    panoramacomboboxAddItem(pano143_title, pano143, pano143, false);
+    panoramacomboboxAddItem(pano147_title, pano147, pano147, false);
+    panoramacomboboxAddItem(pano153_title, pano153, pano153, false);
+    panoramacomboboxAddItem(pano157_title, pano157, pano157, false);
+    panoramacomboboxAddItem(pano165_title, pano165, pano165, false);
+    panoramacomboboxAddItem(pano169_title, pano169, pano169, false);
+    panoramacomboboxAddItem(pano173_title, pano173, pano173, false);
+    panoramacomboboxAddItem(pano177_title, pano177, pano177, false);
+    panoramacomboboxAddItem(pano185_title, pano185, pano185, false);
+    panoramacomboboxAddItem(pano189_title, pano189, pano189, false);
+    panoramacomboboxAddItem(pano194_title, pano194, pano194, false);
+    panoramacomboboxAddItem(pano197_title, pano197, pano197, false);
+    panoramacomboboxAddItem(pano203_title, pano203, pano203, false);
+    panoramacomboboxAddItem(pano207_title, pano207, pano207, false);
+    panoramacomboboxAddItem(pano214_title, pano214, pano214, false);
+    panoramacomboboxAddItem(pano218_title, pano218, pano218, false);
+    panoramacomboboxAddItem(pano225_title, pano225, pano225, false);
+    panoramacomboboxAddItem(pano237_title, pano237, pano237, false);
+    panoramacomboboxAddItem(pano240_title, pano240, pano240, false);
+    panoramacomboboxAddItem(pano249_title, pano249, pano249, false);
+    panoramacomboboxAddItem(pano259_title, pano259, pano259, false);
+    panoramacomboboxAddItem(pano263_title, pano263, pano263, false);
+    panoramacomboboxAddItem(pano273_title, pano273, pano273, false);
+    panoramacomboboxAddItem(pano278_title, pano278, pano278, false);
+    panoramacomboboxAddItem(pano542_title, pano542, pano542, false);
+    panoramacomboboxAddItem(pano548_title, pano548, pano548, false);
+    panoramacomboboxAddItem(pano552_title, pano552, pano552, false);
+    panoramacomboboxAddItem(pano556_title, pano556, pano556, false);
+    panoramacomboboxAddItem(pano562_title, pano562, pano562, false);
+    panoramacomboboxAddItem(pano566_title, pano566, pano566, false);
+    panoramacomboboxAddItem(pano570_title, pano570, pano570, false);
+    panoramacomboboxAddItem(pano574_title, pano574, pano574, false);
+    panoramacomboboxAddItem(pano578_title, pano578, pano578, false);
+    panoramacomboboxAddItem(pano584_title, pano584, pano584, false);
+    panoramacomboboxAddItem(pano588_title, pano588, pano588, false);
+    panoramacomboboxAddItem(pano592_title, pano592, pano592, false);
+    panoramacomboboxAddItem(pano600_title, pano600, pano600, false);
+    panoramacomboboxAddItem(pano605_title, pano605, pano605, false);
+    panoramacomboboxAddItem(pano611_title, pano611, pano611, false);
+    panoramacomboboxAddItem(pano615_title, pano615, pano615, false);
+    panoramacomboboxAddItem(pano623_title, pano623, pano623, false);
+    panoramacomboboxAddItem(pano627_title, pano627, pano627, false);
+    panoramacomboboxAddItem(pano632_title, pano632, pano632, false);
+    panoramacomboboxAddItem(pano636_title, pano636, pano636, false);
+    panoramacomboboxAddItem(pano640_title, pano640, pano640, false);
+    panoramacomboboxAddItem(pano643_title, pano643, pano643, false);
+    panoramacomboboxAddItem(pano663_title, pano663, pano663, false);
+    panoramacomboboxAddItem(pano647_title, pano647, pano647, false);
+    panoramacomboboxAddItem(pano659_title, pano659, pano659, false);
+    panoramacomboboxAddItem(pano651_title, pano651, pano651, false);
+    panoramacomboboxAddItem(pano671_title, pano671, pano671, false);
+    panoramacomboboxAddItem(pano675_title, pano675, pano675, false);
+    panoramacomboboxAddItem(pano680_title, pano680, pano680, false);
+    panoramacomboboxAddItem(pano684_title, pano684, pano684, false);
+    panoramacomboboxAddItem(pano688_title, pano688, pano688, false);
+    panoramacomboboxAddItem(pano699_title, pano699, pano699, false);
+    panoramacomboboxAddItem(pano703_title, pano703, pano703, false);
+    panoramacomboboxAddItem(pano709_title, pano709, pano709, false);
+    panoramacomboboxAddItem(pano1115_title, pano1115, pano1115, false);
+    panoramacomboboxAddItem(pano1437_title, pano1437, pano1437, false);
+    panoramacomboboxAddItem(pano1442_title, pano1442, pano1442, false);
+    panoramacomboboxAddItem(pano1465_title, pano1465, pano1465, false);
+    panoramacomboboxAddItem(pano1476_title, pano1476, pano1476, false);
+    panoramacomboboxAddItem(pano1478_title, pano1478, pano1478, false);
+    panoramacomboboxAddItem(pano1484_title, pano1484, pano1484, false);
+    panoramacomboboxAddItem(pano1488_title, pano1488, pano1488, false);
+    panoramacomboboxAddItem(pano1491_title, pano1491, pano1491, false);
+    panoramacomboboxAddItem(pano1496_title, pano1496, pano1496, false);
+    panoramacomboboxAddItem(pano1499_title, pano1499, pano1499, false);
+    panoramacomboboxAddItem(pano1503_title, pano1503, pano1503, false);
+    panoramacomboboxAddItem(pano1511_title, pano1511, pano1511, false);
+    panoramacomboboxAddItem(pano1519_title, pano1519, pano1519, false);
+    panoramacomboboxAddItem(pano1528_title, pano1528, pano1528, false);
+    panoramacomboboxAddItem(pano1533_title, pano1533, pano1533, false);
+    panoramacomboboxAddItem(pano1535_title, pano1535, pano1535, false);
+    panoramacomboboxAddItem(pano1541_title, pano1541, pano1541, false);
+    panoramacomboboxAddItem(pano1545_title, pano1545, pano1545, false);
+    panoramacomboboxAddItem(pano1548_title, pano1548, pano1548, false);
+    panoramacomboboxAddItem(pano1553_title, pano1553, pano1553, false);
+    panoramacomboboxAddItem(pano1561_title, pano1561, pano1561, false);
+    panoramacomboboxAddItem(pano1565_title, pano1565, pano1565, false);
+    panoramacomboboxAddItem(pano1570_title, pano1570, pano1570, false);
+    panoramacomboboxAddItem(pano1575_title, pano1575, pano1575, false);
+    panoramacomboboxAddItem(pano1579_title, pano1579, pano1579, false);
+    panoramacomboboxAddItem(pano1583_title, pano1583, pano1583, false);
+    panoramacomboboxAddItem(pano1592_title, pano1592, pano1592, false);
+    panoramacomboboxAddItem(pano1597_title, pano1597, pano1597, false);
+    panoramacomboboxAddItem(pano1601_title, pano1601, pano1601, false);
+    panoramacomboboxAddItem(pano1606_title, pano1606, pano1606, false);
+    panoramacomboboxAddItem(pano1613_title, pano1613, pano1613, false);
+    panoramacomboboxAddItem(pano1621_title, pano1621, pano1621, false);
+    panoramacomboboxAddItem(pano1625_title, pano1625, pano1625, false);
+    panoramacomboboxAddItem(pano1629_title, pano1629, pano1629, false);
+    panoramacomboboxAddItem(pano1633_title, pano1633, pano1633, false);
+
+    panoramacomboboxUpdateList();
+  </action>
+
+  <events name="panoramacomboboxEvents"
+    hidetourcontrols="panoramacomboboxHide();"
+    showtourcontrols="panoramacomboboxShow();"
+    onnewpano="panoramacomboboxOnPanorama();"
+    changetourlanguage="panoramacomboboxUpdateLanguage();"
+    keep="true"
+    />
+
+  <action name="panoramacomboboxHide">
+    set(layer[panoramacombobox].visible, false);
+  </action>
+
+  <action name="panoramacomboboxShow">
+  if(layer[panoramacombobox].isLoaded,
+    if (layer[panoramacombobox].item.count GT 0,
+      set(layer[panoramacombobox].visible, true);
+    ,
+      set(layer[panoramacombobox].visible, false);
+    );
+  ,
+    set(layer[panoramacombobox].visible, false);
+  );
+  </action>
+
+  <action name="panoramacomboboxOnPanorama">
+    if(layer[panoramacombobox].isLoaded,
+      panoramacomboboxUpdateList();
+    ,
+      delayedcall(0.2, panoramacomboboxOnPanorama);
+    );
+  </action>
+
+  <action name="panoramacomboboxUpdateList">
+    set(itemtoselect, get(scene[get(xml.scene)].name));
+    layer[panoramacombobox].selectItemByName(get(itemtoselect));
+  </action>
+
+  <action name="panoramacomboboxOpenComboboxList">
+    layer[panoramacombobox].openList();
+  </action>
+
+  <action name="panoramacomboboxCloseComboboxList">
+    layer[panoramacombobox].closeList();
+  </action>
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);set(fullscreen,false);</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);set(fullscreen,true);</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+
+	<!-- WebVR plugin for VR availability tests -->
+
+	<plugin name="ptpvrmode" devices="html5" keep="true"
+		url="%FIRSTXML%/graphics/webvr.js"
+		mobilevr_support="true"
+		mobilevr_fake_support="false"
+		vr_cursor=""
+		vr_cursor_enabled="false"
+		onavailable="delayedcall(1, checkVrAvailability(););"
+		onunavailable="checkVrUnavailable();"
+		/>
+	<action name="checkVrAvailability">
+		if(plugin[ptpvrmode],
+			if (plugin[ptpvrmode].isavailable,
+				set(tour_vrdevices, true);
+				events.dispatch(onvravailable);
+			,
+				set(tour_vrdevices, false);
+			);
+		,
+			checkVrUnavailable();
+		);
+	</action>
+	<action name="checkVrUnavailable">
+		set(tour_vrdevices, false);
+		events.dispatch(onvrunavailable);
+	</action>
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+<action name="viewControlZoomIn">
+	if(%1,
+		if(%2,
+			if(%2 LT view.fovmin,
+				zoomto(get(view.fovmin));
+			,
+				if(%2 LT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, -1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, -1);
+	);
+</action>
+<action name="viewControlZoomOut">
+	if(%1,
+		if(%2,
+			if(%2 GT view.fovmax,
+				zoomto(get(view.fovmax));
+			,
+				if(%2 GT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, +1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, +1);
+	);
+</action>
+<action name="viewControlZoomStop">
+	set(fov_moveforce, 0);
+</action>
+
+  <!-- Sounds Management -->
+  <plugin name="soundinterface"
+          preload="true"
+          url="%SWFPATH%/graphics/soundinterface.swf"
+          alturl="%FIRSTXML%/graphics/soundinterface.js"
+          rootpath="%$videos_sounds_path%/sounds"
+          backgroundsound=""
+          backgroundsoundloops="0"
+          bgsound="false"
+          bgsoundpaused="false"
+          bgsoundloopended="false"
+          bgsoundtoforce = "false"
+          volumeinitialized="false"
+          started="true"
+          keep="true"/>
+  <events name="soundmanagementevents"
+          onnewpano="if(plugin[soundinterface].started,playbackgroundsound(););"
+          onxmlcomplete="soundinterfaceonxmlcomplete();"
+          keep="true"/>
+  <action name="soundinterfaceonxmlcomplete">
+    ifnot(plugin[soundinterface].volumeinitialized,
+      div(plugin[soundinterface].volume, tour_soundsvolume, 100);
+      set(plugin[soundinterface].volumeinitialized,true);
+    );
+  </action>
+  <action name="playsound3Dwhenpossible">
+    set(really_play_sound, true);
+    if (tour_current_played_sound,
+      if (%1 == tour_current_played_sound,
+        delete(tour_current_played_sound);
+        set(tour_current_played_sound_state, 0);
+        delete(tour_current_played_sound_paused);
+        stopsound(%1);
+        set(really_play_sound, false);
+        if(%4,
+          delete(tour_current_played_sound_pausesound);
+          resumeTourSoundsActions(true,true,true,true,true);
+        );
+      );
+    );
+    if (really_play_sound,
+      if (tour_current_played_sound,
+        stopsound(get(tour_current_played_sound));
+
+        ifnot(%4,
+          if(tour_current_played_sound_pausesound,
+            delete(tour_current_played_sound_pausesound);
+            resumeTourSoundsActions(true,true,true,true,true);
+          );
+        );
+      );
+      if(%4,
+        set(tour_current_played_sound_pausesound, true);
+        pauseTourSoundsActions(true,false,true,true,true);
+      );
+      set(tour_current_played_sound, %1);
+      if(tour_current_played_video,
+        set(tour_current_played_sound_state, 2);
+      ,
+        set(tour_current_played_sound_state, 1);
+      );
+      set(tour_current_played_sound_paused, false);
+      if (%3,
+        if (device.flash,
+          div(volume, tour_soundsvolume, 100);
+          if(%9 != null,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8);
+          );
+        ,
+          if(%9 != null,
+            playsound(%1,%2,%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound(%1,%2,%8);
+          );
+        );
+      ,
+        if(%6 != null,
+          playsound(%1,%2,%5,stopsound3Dwhenpossible(%1,%4));
+        ,
+          playsound(%1,%2,%5);
+        );
+      );
+
+      ifnot(tour_soundson,
+        set(tour_current_played_sound_paused, true);
+        pausesound(%1);
+      );
+    );
+  </action>
+  <action name="stopsound3Dwhenpossible">
+    if (%1 == tour_current_played_sound,
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+      delete(tour_current_played_sound_paused);
+
+      ifnot(device.safari,
+        stopsound(%1);
+      );
+      if(%2,
+        delete(tour_current_played_sound_pausesound);
+        resumeTourSoundsActions(true,true,true,true,true);
+      );
+    );
+  </action>
+  <action name="playbackgroundsound">
+  if(playsound,
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound,
+        if (plugin[soundinterface].backgroundsound != scene[get(xml.scene)].backgroundsound,
+          copy(plugin[soundinterface].backgroundsound, scene[get(xml.scene)].backgroundsound);
+          copy(plugin[soundinterface].backgroundsoundloops, scene[get(xml.scene)].backgroundsoundloops);
+          if (tour_soundson,
+            set(plugin[soundinterface].bgsound, true);
+            set(plugin[soundinterface].bgsoundpaused, false);
+            set(plugin[soundinterface].bgsoundloopended, false);
+            set(plugin[soundinterface].bgsoundtoforce, false);
+            if(scene[get(xml.scene)].video == false OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+           ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        ,
+          if (tour_soundson,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            );
+          ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        );
+      );
+    );
+  ,
+    delayedcall(0.2, playbackgroundsound());
+  );
+  </action>
+  <action name="stopbackgroundsoundoncomplete">
+    if (plugin[soundinterface].backgroundsound,
+    if (plugin[soundinterface].backgroundsoundloops GT 0,
+
+      set(plugin[soundinterface].backgroundsoundloops, 0);
+      set(plugin[soundinterface].bgsound, false);
+      set(plugin[soundinterface].bgsoundpaused, false);
+      set(plugin[soundinterface].bgsoundloopended, true);
+    );
+    );
+  </action>
+  <action name="resetbackgroundsoundifneeded">
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound != scene[%1].backgroundsound,
+        if(plugin[soundinterface].backgroundsound,
+          stopsound(bgsoundname);
+        );
+        set(plugin[soundinterface].backgroundsound, "");
+        set(plugin[soundinterface].backgroundsoundloops, 0);
+        set(plugin[soundinterface].bgsound, false);
+        set(plugin[soundinterface].bgsoundpaused, false);
+        set(plugin[soundinterface].bgsoundloopended, false);
+      );
+    );
+  </action>
+  <action name="pausebackgroundsound">
+    if(plugin[soundinterface].backgroundsound,
+      if (plugin[soundinterface].bgsound,
+        if(plugin[soundinterface].bgsoundpaused == false AND plugin[soundinterface].bgsoundloopended == false,
+          pausesound(bgsoundname);
+          set(plugin[soundinterface].bgsoundpaused, true);
+        );
+      );
+    );
+    
+  </action>
+  <action name="resumebackgroundsound">
+    set(bgSoundOnResume, true);
+    set(forceBgSoundOnResume, true);
+    if(layer[displayedStandardVideo],
+    if(layer[displayedStandardVideo].pausebgsound AND tour_current_played_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(layer[webvideodisplay_player],
+    if(layer[webvideodisplay_player].pausebgsound AND tour_current_played_web_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(tour_current_played_sound_pausesound AND tour_current_played_sound,
+      set(bgSoundOnResume, false);
+    );
+    ifnot(plugin[soundinterface].backgroundsound AND scene[get(xml.scene)].backgroundsound,
+      set(bgSoundOnResume, false);
+    );
+    if(videospots_playing GT 0,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    );
+    if(bgSoundOnResume,
+      if (plugin[soundinterface].backgroundsound,
+        if (tour_soundson,
+          if (plugin[soundinterface].bgsound AND plugin[soundinterface].bgsoundloopended == false,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            ,
+
+              if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+                resumesound(bgsoundname);
+                set(plugin[soundinterface].bgsoundpaused, false);
+              );
+            );
+          ,
+            if(((plugin[soundinterface].bgsoundpaused == true OR plugin[soundinterface].bgsoundtoforce == true) AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              set(plugin[soundinterface].bgsound, true);
+              set(plugin[soundinterface].bgsoundpaused, false);
+              set(plugin[soundinterface].bgsoundloopended, false);
+              set(plugin[soundinterface].bgsoundtoforce, false);
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+          );
+        );
+      );
+      
+    ,
+      if(forceBgSoundOnResume,
+        playbackgroundsound();
+        
+      );
+    );
+  </action>
+  <action name="preloadSounds">
+    preloadsound("vitalie_rotaru_-_digital_feelings.mp3");
+  </action>
+
+  <action name="play3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, playpanolocalsounds();););
+  </action>
+  <action name="stop3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, stoppanolocalsounds();););
+  </action>
+  <action name="resume3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, 
+      set(kill3dSoundOnResume, true);
+      if(layer[displayedStandardVideo],
+      if(layer[displayedStandardVideo].pausebgsound,
+      if(tour_current_played_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(layer[webvideodisplay_player],
+      if(layer[webvideodisplay_player].pausebgsound,
+      if(tour_current_played_web_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(tour_current_played_sound_pausesound,
+      if(tour_current_played_sound,
+        set(kill3dSoundOnResume, false);
+      ););
+      if(kill3dSoundOnResume,
+        resumepanolocalsounds();
+      );
+    ););
+  </action>
+  <action name="pause3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, pausepanolocalsounds();););
+  </action>
+  <action name="set3DLocalSoundsVolume">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, setpanolocalsoundsvolume();););
+  </action>
+  <action name="playTourSounds">
+    set(tour_soundson, true);events.dispatch(playtoursoundsevent);
+    resumeTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="stopTourSounds">
+    set(tour_soundson, false);events.dispatch(stoptoursoundsevent);
+    pauseTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="setTourSoundsVolume">
+    set(tour_soundsvolume, %1);events.dispatch(changetoursoundsevent);
+    div(volume, tour_soundsvolume, 100);
+    set(plugin[soundinterface].volume, get(volume));
+    set3DLocalSoundsVolume();
+  </action>
+  <action name="playTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        play3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+          resumebackgroundsound();
+        );
+      );
+    );
+  </action>
+  <action name="stopTourSoundsActions">
+    if(%1,
+      stop3DLocalSounds();
+    );
+    if(%2,
+      stopSoundActionsSounds();
+    );
+    if(%3,
+      stopVideoActionsSounds();
+    );
+    if(%4,
+      pausebackgroundsound();
+    );
+  </action>
+  <action name="resumeTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        resume3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      resumeSoundActionsSounds();
+    );
+    if(%3,
+      resumeVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      ,
+        pausebackgroundsound();
+      );
+    );
+  </action>
+  <action name="pauseTourSoundsActions">
+    if(%1,
+      pause3DLocalSounds();
+    );
+    if(%2,
+      pauseSoundActionsSounds();
+    );
+    if(%3,
+      pauseVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        pausebackgroundsound();
+      ,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      );
+    );
+  </action>
+  <action name="stopSoundActionsSounds">
+    if (tour_current_played_sound,
+      delete(tour_current_played_sound_paused);
+      stopsound(get(tour_current_played_sound));
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+    );
+  </action>
+  <action name="stopVideoActionsSounds">
+    if(tour_current_played_video,
+      if(layer[displayedStandardVideo],
+        layer[displayedStandardVideo].stop();
+        removelayer(displayedStandardVideo);
+        if(layer[displayedStandardVideoOverlayButton], removelayer(displayedStandardVideoOverlayButton); );
+        if(layer[displayedStandardVideoOverlay], removelayer(displayedStandardVideoOverlay); );
+        delete(tour_current_played_video);
+        set(tour_current_played_video_state, 0);
+      );
+    );
+    if(tour_current_played_web_video,
+      displayWebVideoObjectClose();
+    );
+  </action>
+  <action name="resumeSoundActionsSounds">
+    if (tour_current_played_sound,
+      set(resumeSoundActionsVerification, true);
+      if(tour_current_played_video,
+        if(tour_current_played_sound_state LT tour_current_played_video_state,
+          set(resumeSoundActionsVerification, false);
+        );
+      );
+      if(resumeSoundActionsVerification,
+        if (tour_soundson,
+          if(tour_current_played_sound_paused,
+            set(tour_current_played_sound_paused, false);
+            resumesound(get(tour_current_played_sound));
+          ,
+
+            if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+              set(tour_current_played_sound_paused, false);
+              resumesound(get(tour_current_played_sound));
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="resumeVideoActionsSounds">
+    if(tour_current_played_video,
+      set(resumeVideoActionsVerification, true);
+      if(tour_current_played_sound,
+        if(tour_current_played_video_state LT tour_current_played_sound_state,
+          set(resumeVideoActionsVerification, false);
+        );
+      );
+      if(resumeVideoActionsVerification,
+        if (tour_soundson,
+          if(device.flash OR (device.webgl AND !device.ios),
+            div(volume, tour_soundsvolume, 100);
+            set(layer[displayedStandardVideo].volume, get(volume));
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.startVideosSounds(get(volume)));
+            ,
+              if(tour_soundsvolume GT 0,
+                set(layer[displayedStandardVideo].muted, false);
+              ,
+                set(layer[displayedStandardVideo].muted, true);
+              );
+            );
+          );
+        ,
+          if(device.flash OR (device.webgl AND !device.ios),
+            set(layer[displayedStandardVideo].volume, 0);
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.stopVideosSounds());
+            ,
+              set(layer[displayedStandardVideo].muted, true);
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="pauseSoundActionsSounds">
+    if (tour_current_played_sound,
+      ifnot(tour_current_played_sound_paused,
+        set(tour_current_played_sound_paused, true);
+        pausesound(get(tour_current_played_sound));
+      );
+    );
+  </action>
+  <action name="pauseVideoActionsSounds">
+    if(tour_current_played_video,
+      if(device.flash OR (device.webgl AND !device.ios),
+        set(layer[displayedStandardVideo].volume, 0);
+      ,
+        ifnot(device.ios,
+          js(kpanotour.Sounds.stopVideosSounds());
+        ,
+          set(layer[displayedStandardVideo].muted, true);
+        );
+      );
+    );
+  </action>
+
+</krpano>
